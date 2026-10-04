@@ -1,0 +1,36 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# --- generated artefacts (rebuild with `make index` / `make eval`) ---
+data/index/
+data/index_ablation/
+data/cache/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- user-supplied papers (kept out of version control for copyright) ---
+data/corpus/inbox/*
+!data/corpus/inbox/.gitkeep
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# ---------------------------------------------------------------------------
+# DELIBERATELY COMMITTED (do not ignore):
+#   data/corpus/corpus.jsonl   frozen literature snapshot -> reproducible results
+#   data/corpus/manifest.json  provenance of that snapshot
+#   data/golden/golden.jsonl   hand-labelled evaluation set
+#   config/abstention.json     learned abstention threshold
+#   reports/*.json             raw per-question results behind the report
+#   docs/EVALUATION.md         the generated evaluation report
+# ---------------------------------------------------------------------------

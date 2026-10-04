@@ -1,0 +1,151 @@
+# ---------------------------------------------------------------------------
+# Corpus specification for NeuroRAG.
+#
+# The corpus is deliberately organised into three "strata" so that the
+# evaluation harness can report retrieval quality per stratum:
+#
+#   clinical  - Alzheimer's disease / neuroimaging medicine literature
+#   methods   - deep learning architectures & evaluation methodology
+#   rag       - retrieval-augmented generation literature (so the system can
+#               also answer questions about its own design)
+#
+# Each topic has:
+#   name      : stable identifier used in metadata + eval slicing
+#   source    : europepmc | arxiv
+#   query     : source-native query string
+#   max_docs  : documents to keep for this topic
+#
+# NOTE ON REPRODUCIBILITY: scripts/build_corpus.py writes a frozen snapshot to
+# data/corpus/corpus.jsonl. That snapshot is committed to the repository so
+# that every evaluation number in docs/EVALUATION_REPORT.md can be reproduced
+# exactly by anyone who clones the repo, without depending on live API state.
+# Re-running the fetcher refreshes the snapshot and will change the numbers.
+# ---------------------------------------------------------------------------
+
+strata:
+  clinical:
+    - name: ad_mri_classification
+      source: europepmc
+      query: '(TITLE:"Alzheimer''s disease" OR TITLE:"Alzheimer disease") AND (TITLE:MRI OR TITLE:"magnetic resonance") AND (TITLE:"deep learning" OR TITLE:"classification" OR TITLE:"neural network")'
+      max_docs: 40
+
+    - name: mci_conversion
+      source: europepmc
+      query: '(TITLE:"mild cognitive impairment") AND (ABSTRACT:conversion OR ABSTRACT:progression OR ABSTRACT:prediction) AND (ABSTRACT:MRI OR ABSTRACT:neuroimaging)'
+      max_docs: 35
+
+    - name: multi_view_mri
+      source: europepmc
+      query: '(ABSTRACT:"multi-view" OR ABSTRACT:multiview OR ABSTRACT:"axial" AND ABSTRACT:"coronal" AND ABSTRACT:"sagittal") AND (ABSTRACT:brain OR ABSTRACT:MRI) AND (ABSTRACT:"deep learning" OR ABSTRACT:classification)'
+      max_docs: 20
+
+    - name: cdr_staging
+      source: europepmc
+      query: '("Clinical Dementia Rating" OR CDR) AND (ABSTRACT:staging OR ABSTRACT:severity) AND (ABSTRACT:Alzheimer OR ABSTRACT:dementia)'
+      max_docs: 20
+
+    - name: hippocampal_atrophy
+      source: europepmc
+      query: '(TITLE:hippocamp* OR ABSTRACT:"hippocampal volume" OR ABSTRACT:"hippocampal atrophy") AND (ABSTRACT:Alzheimer OR ABSTRACT:dementia) AND (ABSTRACT:MRI OR ABSTRACT:volumetr*)'
+      max_docs: 25
+
+    - name: amyloid_tau_pet
+      source: europepmc
+      query: '(ABSTRACT:"amyloid PET" OR ABSTRACT:"tau PET" OR ABSTRACT:"amyloid-beta") AND (ABSTRACT:Alzheimer) AND (ABSTRACT:imaging OR ABSTRACT:biomarker)'
+      max_docs: 25
+
+    - name: neuroimaging_datasets
+      source: europepmc
+      query: '(ABSTRACT:ADNI OR ABSTRACT:"Alzheimer''s Disease Neuroimaging Initiative" OR ABSTRACT:OASIS) AND (ABSTRACT:MRI OR ABSTRACT:dataset OR ABSTRACT:benchmark)'
+      max_docs: 20
+
+    - name: vascular_dementia_diffdx
+      source: europepmc
+      query: '(TITLE:"vascular dementia" OR TITLE:"frontotemporal" OR TITLE:"Lewy body") AND (ABSTRACT:"differential diagnosis" OR ABSTRACT:classification) AND (ABSTRACT:MRI OR ABSTRACT:neuroimaging)'
+      max_docs: 15
+
+  methods:
+    - name: vision_transformer_medical
+      source: arxiv
+      query: 'vision transformer medical image classification'
+      max_docs: 20
+
+    - name: swin_unetr_segmentation
+      source: arxiv
+      query: 'Swin UNETR brain tumor segmentation transformer'
+      max_docs: 15
+
+    - name: brats_multimodal
+      source: europepmc
+      query: '(ABSTRACT:BraTS OR TITLE:"brain tumor segmentation") AND (ABSTRACT:multimodal OR ABSTRACT:"multi-modal") AND (ABSTRACT:MRI)'
+      max_docs: 20
+
+    - name: monai_framework
+      source: arxiv
+      query: 'MONAI medical open network artificial intelligence imaging'
+      max_docs: 10
+
+    - name: evaluation_leakage
+      source: europepmc
+      query: '(ABSTRACT:"data leakage" OR ABSTRACT:"cross-validation") AND (ABSTRACT:"medical imaging" OR ABSTRACT:neuroimaging) AND (ABSTRACT:"deep learning" OR ABSTRACT:classification)'
+      max_docs: 20
+
+    - name: explainable_ai_medical
+      source: europepmc
+      query: '(ABSTRACT:"Grad-CAM" OR ABSTRACT:"explainable artificial intelligence" OR TITLE:"explainable AI") AND (ABSTRACT:"medical imaging" OR ABSTRACT:radiolog*)'
+      max_docs: 20
+
+    - name: multimodal_fusion
+      source: europepmc
+      query: '(TITLE:"multimodal fusion" OR TITLE:"multi-modal fusion" OR ABSTRACT:"feature fusion") AND (ABSTRACT:neuroimaging OR ABSTRACT:Alzheimer OR ABSTRACT:MRI)'
+      max_docs: 20
+
+    - name: transfer_learning_medical
+      source: europepmc
+      query: '(TITLE:"transfer learning" OR ABSTRACT:"pre-trained") AND (ABSTRACT:"medical imaging" OR ABSTRACT:radiology) AND (ABSTRACT:"deep learning")'
+      max_docs: 15
+
+  rag:
+    - name: retrieval_augmented_generation
+      source: arxiv
+      query: 'retrieval augmented generation large language models knowledge intensive'
+      max_docs: 20
+
+    - name: dense_passage_retrieval
+      source: arxiv
+      query: 'dense passage retrieval question answering'
+      max_docs: 12
+
+    - name: hybrid_sparse_dense
+      source: arxiv
+      query: 'hybrid retrieval BM25 dense reciprocal rank fusion'
+      max_docs: 12
+
+    - name: reranking_cross_encoder
+      source: arxiv
+      query: 'cross-encoder reranking passage retrieval neural'
+      max_docs: 12
+
+    - name: chunking_and_context
+      source: arxiv
+      query: 'chunking long context retrieval augmented generation document segmentation'
+      max_docs: 10
+
+    - name: hallucination_faithfulness
+      source: arxiv
+      query: 'hallucination faithfulness evaluation large language models'
+      max_docs: 15
+
+    - name: biomedical_rag
+      source: europepmc
+      query: '(ABSTRACT:"retrieval-augmented generation" OR ABSTRACT:"large language model") AND (ABSTRACT:biomedical OR ABSTRACT:clinical) AND (ABSTRACT:"question answering")'
+      max_docs: 20
+
+# ---------------------------------------------------------------------------
+# PINNED PRIMARY SOURCES
+#
+# Keyword search does not reliably surface canonical primary sources, so papers
+# that MUST be in the corpus are pinned by identifier in
+# `config/pinned_records.yaml` (arXiv ids + Crossref DOIs + author-supplied
+# records). scripts/build_corpus.py merges both specs.
+# ---------------------------------------------------------------------------

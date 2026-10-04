@@ -1,0 +1,34 @@
+# ---------------------------------------------------------------------------
+# NeuroRAG dependencies
+#
+# The package is deliberately layered so it degrades instead of failing:
+#
+#   * Core (numpy, pyyaml) is all you need to run retrieval with the offline
+#     lexical encoder and the extractive answer backend.
+#   * sentence-transformers adds real semantic embeddings and the cross-encoder
+#     reranker.
+#   * An LLM API key (OPENAI_API_KEY or GEMINI_API_KEY) or a local Ollama adds
+#     real generative answers.
+#
+# Install with:  pip install -r requirements.txt
+# ---------------------------------------------------------------------------
+
+# --- core ------------------------------------------------------------------
+numpy>=1.24
+PyYAML>=6.0
+
+# --- embeddings + reranking (optional but recommended) ----------------------
+# Pulls in torch. On a CPU-only machine use:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+#   pip install sentence-transformers
+sentence-transformers>=2.7
+
+# --- demo UI ---------------------------------------------------------------
+streamlit>=1.32
+
+# --- PDF ingestion for your own papers (optional) ---------------------------
+pypdf>=4.0
+
+# --- development ------------------------------------------------------------
+pytest>=7.4
+matplotlib>=3.7

@@ -1,0 +1,28 @@
+{
+  "threshold": -0.32513,
+  "signals": [
+    "mean_top3"
+  ],
+  "weights": {
+    "mean_top3": 0.5
+  },
+  "stats": {
+    "mean_top3": {
+      "mean": 0.4601995777777778,
+      "std": 0.19991796173669604
+    }
+  },
+  "calibrated_on": "33 answerable / 12 unanswerable golden questions",
+  "calibrated_for_embedder": "all-MiniLM-L6-v2",
+  "retriever_mode": "mode=weighted | embedder=all-MiniLM-L6-v2 (semantic) | bm25=on | reranker=off | top_k=6",
+  "metrics": {
+    "balanced_accuracy": 0.8977,
+    "true_refusal_rate": 0.9167,
+    "false_refusal_rate": 0.1212,
+    "auroc": 0.9293,
+    "cohens_d": 2.3773,
+    "mean_answerable": 0.4213945089340502,
+    "mean_unanswerable": -1.1588348995686388
+  },
+  "max_false_refusal_budget": 0.15
+}

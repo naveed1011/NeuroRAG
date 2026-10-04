@@ -1,0 +1,229 @@
+{
+  "built_at_utc": "2026-10-04T06:26:24Z",
+  "spec_file": "config/corpus_topics.yaml",
+  "output_file": "data/corpus/corpus.jsonl",
+  "snapshot_hash": "524b91af07f573d5",
+  "dropped_short_documents": 1,
+  "min_chars": 250,
+  "statistics": {
+    "n_documents": 436,
+    "by_stratum": {
+      "clinical": 192,
+      "methods": 146,
+      "rag": 98
+    },
+    "by_source": {
+      "europepmc": 302,
+      "author_supplied": 1,
+      "arxiv": 132,
+      "crossref": 1
+    },
+    "by_topic": {
+      "ad_mri_classification": 34,
+      "amyloid_tau_pet": 25,
+      "biomedical_rag": 20,
+      "brats_multimodal": 20,
+      "cdr_staging": 20,
+      "chunking_and_context": 7,
+      "dense_passage_retrieval": 11,
+      "evaluation_leakage": 20,
+      "explainable_ai_medical": 19,
+      "hallucination_faithfulness": 13,
+      "hippocampal_atrophy": 25,
+      "hybrid_sparse_dense": 12,
+      "mci_conversion": 35,
+      "monai_framework": 10,
+      "multi_view_mri": 20,
+      "multimodal_fusion": 17,
+      "neuroimaging_datasets": 18,
+      "own_publication": 1,
+      "reranking_cross_encoder": 8,
+      "retrieval_augmented_generation": 27,
+      "swin_unetr_segmentation": 19,
+      "transfer_learning_medical": 15,
+      "vascular_dementia_diffdx": 14,
+      "vision_transformer_medical": 26
+    },
+    "year_range": [
+      2009,
+      2026
+    ],
+    "median_text_chars": 1620,
+    "total_text_chars": 728373,
+    "approx_tokens": 182093,
+    "n_with_sections": 155,
+    "n_with_doi": 304,
+    "n_with_authors": 436
+  },
+  "fetch_audit": [
+    {
+      "topic": "ad_mri_classification",
+      "stratum": "clinical",
+      "source": "europepmc",
+      "fetched": 35,
+      "error": null
+    },
+    {
+      "topic": "mci_conversion",
+      "stratum": "clinical",
+      "source": "europepmc",
+      "fetched": 35,
+      "error": null
+    },
+    {
+      "topic": "multi_view_mri",
+      "stratum": "clinical",
+      "source": "europepmc",
+      "fetched": 20,
+      "error": null
+    },
+    {
+      "topic": "cdr_staging",
+      "stratum": "clinical",
+      "source": "europepmc",
+      "fetched": 20,
+      "error": null
+    },
+    {
+      "topic": "hippocampal_atrophy",
+      "stratum": "clinical",
+      "source": "europepmc",
+      "fetched": 25,
+      "error": null
+    },
+    {
+      "topic": "amyloid_tau_pet",
+      "stratum": "clinical",
+      "source": "europepmc",
+      "fetched": 25,
+      "error": null
+    },
+    {
+      "topic": "neuroimaging_datasets",
+      "stratum": "clinical",
+      "source": "europepmc",
+      "fetched": 20,
+      "error": null
+    },
+    {
+      "topic": "vascular_dementia_diffdx",
+      "stratum": "clinical",
+      "source": "europepmc",
+      "fetched": 15,
+      "error": null
+    },
+    {
+      "topic": "vision_transformer_medical",
+      "stratum": "methods",
+      "source": "arxiv",
+      "fetched": 20,
+      "error": null
+    },
+    {
+      "topic": "swin_unetr_segmentation",
+      "stratum": "methods",
+      "source": "arxiv",
+      "fetched": 15,
+      "error": null
+    },
+    {
+      "topic": "brats_multimodal",
+      "stratum": "methods",
+      "source": "europepmc",
+      "fetched": 20,
+      "error": null
+    },
+    {
+      "topic": "monai_framework",
+      "stratum": "methods",
+      "source": "arxiv",
+      "fetched": 10,
+      "error": null
+    },
+    {
+      "topic": "evaluation_leakage",
+      "stratum": "methods",
+      "source": "europepmc",
+      "fetched": 20,
+      "error": null
+    },
+    {
+      "topic": "explainable_ai_medical",
+      "stratum": "methods",
+      "source": "europepmc",
+      "fetched": 20,
+      "error": null
+    },
+    {
+      "topic": "multimodal_fusion",
+      "stratum": "methods",
+      "source": "europepmc",
+      "fetched": 20,
+      "error": null
+    },
+    {
+      "topic": "transfer_learning_medical",
+      "stratum": "methods",
+      "source": "europepmc",
+      "fetched": 15,
+      "error": null
+    },
+    {
+      "topic": "retrieval_augmented_generation",
+      "stratum": "rag",
+      "source": "arxiv",
+      "fetched": 20,
+      "error": null
+    },
+    {
+      "topic": "dense_passage_retrieval",
+      "stratum": "rag",
+      "source": "arxiv",
+      "fetched": 12,
+      "error": null
+    },
+    {
+      "topic": "hybrid_sparse_dense",
+      "stratum": "rag",
+      "source": "arxiv",
+      "fetched": 12,
+      "error": null
+    },
+    {
+      "topic": "reranking_cross_encoder",
+      "stratum": "rag",
+      "source": "arxiv",
+      "fetched": 12,
+      "error": null
+    },
+    {
+      "topic": "chunking_and_context",
+      "stratum": "rag",
+      "source": "arxiv",
+      "fetched": 10,
+      "error": null
+    },
+    {
+      "topic": "hallucination_faithfulness",
+      "stratum": "rag",
+      "source": "arxiv",
+      "fetched": 15,
+      "error": null
+    },
+    {
+      "topic": "biomedical_rag",
+      "stratum": "rag",
+      "source": "europepmc",
+      "fetched": 20,
+      "error": null
+    },
+    {
+      "topic": "pinned_records",
+      "stratum": "all",
+      "source": "arxiv/crossref/author",
+      "fetched": 21,
+      "error": null
+    }
+  ],
+  "reparse_sections_at_utc": "2026-10-04T08:51:13Z"
+}

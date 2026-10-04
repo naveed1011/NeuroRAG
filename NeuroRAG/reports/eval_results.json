@@ -1,0 +1,3839 @@
+{
+  "label": "default",
+  "generated_at": "2026-10-04T15:16:19Z",
+  "config": {
+    "mode": "weighted",
+    "top_k": 6,
+    "rerank": false,
+    "chunk": "900+150",
+    "embed_model": "all-MiniLM-L6-v2",
+    "llm": "auto",
+    "abstain": true
+  },
+  "overrides": {},
+  "backends": {
+    "retriever": "mode=weighted | embedder=all-MiniLM-L6-v2 (semantic) | bm25=on | reranker=off | top_k=6",
+    "llm": "extractive (extractive-fallback)",
+    "abstention": "active@-0.325"
+  },
+  "n_answerable": 33,
+  "n_unanswerable": 12,
+  "with_generation": true,
+  "elapsed_s": 24.14,
+  "mean_latency_ms": 154.7,
+  "retrieval": {
+    "mrr": 0.8535,
+    "map": 0.8232,
+    "ndcg@10": 0.8563,
+    "first_relevant_rank": 1.2424,
+    "n_documents_retrieved": 7.8485,
+    "hit@1": 0.7576,
+    "recall@1": 0.7273,
+    "precision@1": 0.7576,
+    "hit@3": 0.9697,
+    "recall@3": 0.904,
+    "precision@3": 0.3333,
+    "hit@5": 0.9697,
+    "recall@5": 0.9192,
+    "precision@5": 0.2061,
+    "hit@10": 0.9697,
+    "recall@10": 0.9192,
+    "precision@10": 0.1349
+  },
+  "headline_ci": {
+    "recall@1": {
+      "mean": 0.7273,
+      "ci_low": 0.5758,
+      "ci_high": 0.8636
+    },
+    "recall@3": {
+      "mean": 0.904,
+      "ci_low": 0.8182,
+      "ci_high": 0.9798
+    },
+    "recall@5": {
+      "mean": 0.9192,
+      "ci_low": 0.8384,
+      "ci_high": 0.9848
+    },
+    "recall@10": {
+      "mean": 0.9192,
+      "ci_low": 0.8384,
+      "ci_high": 0.9848
+    },
+    "mrr": {
+      "mean": 0.8535,
+      "ci_low": 0.7626,
+      "ci_high": 0.9394
+    },
+    "ndcg@10": {
+      "mean": 0.8563,
+      "ci_low": 0.7614,
+      "ci_high": 0.9396
+    },
+    "map": {
+      "mean": 0.8232,
+      "ci_low": 0.7146,
+      "ci_high": 0.9192
+    }
+  },
+  "generation": {
+    "faithfulness": 1.0,
+    "hallucination_rate": 0.0,
+    "answer_correctness": 0.5646,
+    "answer_relevancy": 0.5308,
+    "context_precision": 0.2273,
+    "context_recall": 0.9192,
+    "citation_accuracy": 0.303,
+    "n_citations": 2.7879,
+    "fabricated_citation_rate": 0.0,
+    "citation_coverage": 0.703,
+    "gold_documents_cited": 0.8182,
+    "refused": 0.1212,
+    "over_refusal": 0.1212
+  },
+  "refusal": {
+    "n": 12,
+    "refused": 11,
+    "refusal_accuracy": 0.9167,
+    "incorrectly_answered": [
+      "ref-012"
+    ],
+    "over_refusal": 0.1212,
+    "over_refused_qids": [
+      "rag-010",
+      "mth-002",
+      "cli-001",
+      "hop-001"
+    ]
+  },
+  "by_stratum": {
+    "clinical": {
+      "mrr": 0.9375,
+      "map": 0.9375,
+      "ndcg@10": 0.9538662191964322,
+      "first_relevant_rank": 1.125,
+      "n_documents_retrieved": 7.125,
+      "hit@1": 0.875,
+      "recall@1": 0.8125,
+      "precision@1": 0.875,
+      "hit@3": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.375,
+      "hit@5": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.225,
+      "hit@10": 1.0,
+      "recall@10": 1.0,
+      "precision@10": 0.1654265873015873
+    },
+    "methods": {
+      "mrr": 0.8717948717948718,
+      "map": 0.8141025641025641,
+      "ndcg@10": 0.8546769674044694,
+      "first_relevant_rank": 1.3076923076923077,
+      "n_documents_retrieved": 8.0,
+      "hit@1": 0.7692307692307693,
+      "recall@1": 0.7307692307692307,
+      "precision@1": 0.7692307692307693,
+      "hit@3": 1.0,
+      "recall@3": 0.8717948717948718,
+      "precision@3": 0.3333333333333333,
+      "hit@5": 1.0,
+      "recall@5": 0.9102564102564104,
+      "precision@5": 0.2153846153846154,
+      "hit@10": 1.0,
+      "recall@10": 0.9102564102564104,
+      "precision@10": 0.13574481074481073
+    },
+    "rag": {
+      "mrr": 0.7777777777777778,
+      "map": 0.7569444444444445,
+      "ndcg@10": 0.7931485467338333,
+      "first_relevant_rank": 1.25,
+      "n_documents_retrieved": 8.166666666666666,
+      "hit@1": 0.6666666666666666,
+      "recall@1": 0.6666666666666666,
+      "precision@1": 0.6666666666666666,
+      "hit@3": 0.9166666666666666,
+      "recall@3": 0.875,
+      "precision@3": 0.3055555555555555,
+      "hit@5": 0.9166666666666666,
+      "recall@5": 0.875,
+      "precision@5": 0.18333333333333335,
+      "hit@10": 0.9166666666666666,
+      "recall@10": 0.875,
+      "precision@10": 0.11372354497354498
+    }
+  },
+  "by_category": {
+    "bibliographic": {
+      "mrr": 1.0,
+      "map": 1.0,
+      "ndcg@10": 1.0,
+      "first_relevant_rank": 1.0,
+      "n_documents_retrieved": 7.0,
+      "hit@1": 1.0,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@3": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@5": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@10": 1.0,
+      "recall@10": 1.0,
+      "precision@10": 0.14285714285714285
+    },
+    "comparative": {
+      "mrr": 0.5416666666666666,
+      "map": 0.4375,
+      "ndcg@10": 0.5483566009043177,
+      "first_relevant_rank": 2.25,
+      "n_documents_retrieved": 8.25,
+      "hit@1": 0.25,
+      "recall@1": 0.25,
+      "precision@1": 0.25,
+      "hit@3": 1.0,
+      "recall@3": 0.75,
+      "precision@3": 0.3333333333333333,
+      "hit@5": 1.0,
+      "recall@5": 0.75,
+      "precision@5": 0.2,
+      "hit@10": 1.0,
+      "recall@10": 0.75,
+      "precision@10": 0.12321428571428572
+    },
+    "definitional": {
+      "mrr": 1.0,
+      "map": 1.0,
+      "ndcg@10": 1.0,
+      "first_relevant_rank": 1.0,
+      "n_documents_retrieved": 8.5,
+      "hit@1": 1.0,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@3": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@5": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@10": 1.0,
+      "recall@10": 1.0,
+      "precision@10": 0.11805555555555555
+    },
+    "factual": {
+      "mrr": 0.9166666666666666,
+      "map": 0.9166666666666666,
+      "ndcg@10": 0.9384882922619097,
+      "first_relevant_rank": 1.1666666666666667,
+      "n_documents_retrieved": 7.833333333333333,
+      "hit@1": 0.8333333333333334,
+      "recall@1": 0.75,
+      "precision@1": 0.8333333333333334,
+      "hit@3": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.38888888888888884,
+      "hit@5": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.23333333333333336,
+      "hit@10": 1.0,
+      "recall@10": 1.0,
+      "precision@10": 0.1597222222222222
+    },
+    "methodological": {
+      "mrr": 0.9333333333333333,
+      "map": 0.9166666666666666,
+      "ndcg@10": 0.9426049881653976,
+      "first_relevant_rank": 1.1333333333333333,
+      "n_documents_retrieved": 7.666666666666667,
+      "hit@1": 0.8666666666666667,
+      "recall@1": 0.8333333333333334,
+      "precision@1": 0.8666666666666667,
+      "hit@3": 1.0,
+      "recall@3": 0.9666666666666667,
+      "precision@3": 0.3333333333333333,
+      "hit@5": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.21333333333333335,
+      "hit@10": 1.0,
+      "recall@10": 1.0,
+      "precision@10": 0.1403968253968254
+    },
+    "multi_hop": {
+      "mrr": 0.25,
+      "map": 0.08333333333333333,
+      "ndcg@10": 0.1480409554829326,
+      "first_relevant_rank": 1.0,
+      "n_documents_retrieved": 9.0,
+      "hit@1": 0.0,
+      "recall@1": 0.0,
+      "precision@1": 0.0,
+      "hit@3": 0.5,
+      "recall@3": 0.16666666666666666,
+      "precision@3": 0.16666666666666666,
+      "hit@5": 0.5,
+      "recall@5": 0.16666666666666666,
+      "precision@5": 0.1,
+      "hit@10": 0.5,
+      "recall@10": 0.16666666666666666,
+      "precision@10": 0.05
+    },
+    "numeric": {
+      "mrr": 1.0,
+      "map": 1.0,
+      "ndcg@10": 1.0,
+      "first_relevant_rank": 1.0,
+      "n_documents_retrieved": 8.0,
+      "hit@1": 1.0,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@3": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@5": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@10": 1.0,
+      "recall@10": 1.0,
+      "precision@10": 0.125
+    },
+    "own_work": {
+      "mrr": 1.0,
+      "map": 1.0,
+      "ndcg@10": 1.0,
+      "first_relevant_rank": 1.0,
+      "n_documents_retrieved": 6.0,
+      "hit@1": 1.0,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@3": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@5": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@10": 1.0,
+      "recall@10": 1.0,
+      "precision@10": 0.16666666666666666
+    }
+  },
+  "by_challenge": {
+    "both": {
+      "mrr": 0.875,
+      "map": 0.84375,
+      "ndcg@10": 0.8772228201007499,
+      "first_relevant_rank": 1.25,
+      "n_documents_retrieved": 8.0,
+      "hit@1": 0.75,
+      "recall@1": 0.75,
+      "precision@1": 0.75,
+      "hit@3": 1.0,
+      "recall@3": 0.9375,
+      "precision@3": 0.3333333333333333,
+      "hit@5": 1.0,
+      "recall@5": 0.9375,
+      "precision@5": 0.2,
+      "hit@10": 1.0,
+      "recall@10": 0.9375,
+      "precision@10": 0.12842261904761904
+    },
+    "lexical": {
+      "mrr": 0.9444444444444445,
+      "map": 0.9444444444444445,
+      "ndcg@10": 0.9583333333333334,
+      "first_relevant_rank": 1.1666666666666667,
+      "n_documents_retrieved": 7.416666666666667,
+      "hit@1": 0.9166666666666666,
+      "recall@1": 0.875,
+      "precision@1": 0.9166666666666666,
+      "hit@3": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3611111111111111,
+      "hit@5": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.21666666666666667,
+      "hit@10": 1.0,
+      "recall@10": 1.0,
+      "precision@10": 0.15145502645502645
+    },
+    "none": {
+      "mrr": 1.0,
+      "map": 1.0,
+      "ndcg@10": 1.0,
+      "first_relevant_rank": 1.0,
+      "n_documents_retrieved": 6.0,
+      "hit@1": 1.0,
+      "recall@1": 1.0,
+      "precision@1": 1.0,
+      "hit@3": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@5": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@10": 1.0,
+      "recall@10": 1.0,
+      "precision@10": 0.16666666666666666
+    },
+    "semantic": {
+      "mrr": 0.7361111111111112,
+      "map": 0.6736111111111112,
+      "ndcg@10": 0.7284775274857965,
+      "first_relevant_rank": 1.3333333333333333,
+      "n_documents_retrieved": 8.333333333333334,
+      "hit@1": 0.5833333333333334,
+      "recall@1": 0.5416666666666666,
+      "precision@1": 0.5833333333333334,
+      "hit@3": 0.9166666666666666,
+      "recall@3": 0.7777777777777778,
+      "precision@3": 0.3055555555555555,
+      "hit@5": 0.9166666666666666,
+      "recall@5": 0.8194444444444445,
+      "precision@5": 0.20000000000000004,
+      "hit@10": 0.9166666666666666,
+      "recall@10": 0.8194444444444445,
+      "precision@10": 0.1201058201058201
+    }
+  },
+  "by_difficulty": {
+    "easy": {
+      "mrr": 0.9375,
+      "map": 0.9375,
+      "ndcg@10": 0.9538662191964322,
+      "first_relevant_rank": 1.125,
+      "n_documents_retrieved": 7.5,
+      "hit@1": 0.875,
+      "recall@1": 0.8125,
+      "precision@1": 0.875,
+      "hit@3": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.375,
+      "hit@5": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.225,
+      "hit@10": 1.0,
+      "recall@10": 1.0,
+      "precision@10": 0.15773809523809523
+    },
+    "hard": {
+      "mrr": 0.7619047619047619,
+      "map": 0.6904761904761905,
+      "ndcg@10": 0.7404802592800847,
+      "first_relevant_rank": 1.3571428571428572,
+      "n_documents_retrieved": 7.928571428571429,
+      "hit@1": 0.6428571428571429,
+      "recall@1": 0.6071428571428571,
+      "precision@1": 0.6428571428571429,
+      "hit@3": 0.9285714285714286,
+      "recall@3": 0.7738095238095238,
+      "precision@3": 0.3095238095238095,
+      "hit@5": 0.9285714285714286,
+      "recall@5": 0.8095238095238095,
+      "precision@5": 0.2,
+      "hit@10": 0.9285714285714286,
+      "recall@10": 0.8095238095238095,
+      "precision@10": 0.1282312925170068
+    },
+    "medium": {
+      "mrr": 0.9090909090909091,
+      "map": 0.9090909090909091,
+      "ndcg@10": 0.9328963188311742,
+      "first_relevant_rank": 1.1818181818181819,
+      "n_documents_retrieved": 8.0,
+      "hit@1": 0.8181818181818182,
+      "recall@1": 0.8181818181818182,
+      "precision@1": 0.8181818181818182,
+      "hit@3": 1.0,
+      "recall@3": 1.0,
+      "precision@3": 0.3333333333333333,
+      "hit@5": 1.0,
+      "recall@5": 1.0,
+      "precision@5": 0.2,
+      "hit@10": 1.0,
+      "recall@10": 1.0,
+      "precision@10": 0.12687590187590186
+    }
+  },
+  "answerable_rows": [
+    {
+      "qid": "rag-001",
+      "question": "What two kinds of memory does a retrieval-augmented generation model combine?",
+      "gold_doc_ids": [
+        "arxiv:2005.11401"
+      ],
+      "stratum": "rag",
+      "category": "definitional",
+      "difficulty": "easy",
+      "retrieval_challenge": "semantic",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 9.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.1111111111111111
+      },
+      "retrieved_doc_ids": [
+        "arxiv:2005.11401",
+        "arxiv:2005.11401",
+        "arxiv:2609.31660",
+        "epmc:10.21203/rs.3.rs-10503006/v1",
+        "arxiv:2504.19754",
+        "arxiv:2411.18583",
+        "arxiv:2402.12317",
+        "arxiv:2502.00306",
+        "epmc:42533201",
+        "epmc:42751889"
+      ],
+      "gold_ranks": [
+        1,
+        2
+      ],
+      "refused": false,
+      "answer_text": "Retrieval-augmented generation (RAG) pipelines are typically assembled from independently-chosen components -- a document parser, a chunking strategy, and an embedding model -- yet these choices are rarely evaluated jointly, and evaluations that do combine them are usually run on a single document or corpus. [3] We explore a general-purpose fine-tuning recipe for retrieval-augmented generation (RAG) -- models which combine pre-trained parametric and non-parametric memory for language generation. [1] ## Abstract Retrieval-Augmented Generation (RAG) architectures combine Large Language Models (LLMs) withexternal knowledge stores to produce grounded, verifiable answers. [4] This research presents and compares multiple approaches to automate the generation of literature reviews using several Natural Language Processing (NLP) techniques and retrieval-augmented generation (RAG) with a Large Language Model (LLM). [6]",
+      "backend": "extractive",
+      "confidence": 0.3779,
+      "latency_ms": {
+        "retrieval": 27.4,
+        "generation": 4058.3
+      },
+      "cited_doc_ids": [
+        "arxiv:2005.11401",
+        "arxiv:2609.31660",
+        "epmc:10.21203/rs.3.rs-10503006/v1",
+        "arxiv:2411.18583"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 1.0,
+        "answer_relevancy": 0.5437090820111482,
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.25,
+        "n_citations": 4.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "rag-002",
+      "question": "By how much did dense passage retrieval outperform BM25 on top-20 passage retrieval accuracy?",
+      "gold_doc_ids": [
+        "arxiv:2004.04906"
+      ],
+      "stratum": "rag",
+      "category": "numeric",
+      "difficulty": "medium",
+      "retrieval_challenge": "lexical",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 8.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.125
+      },
+      "retrieved_doc_ids": [
+        "arxiv:2004.04906",
+        "arxiv:2204.07496",
+        "arxiv:2108.06279",
+        "arxiv:2108.06279",
+        "arxiv:2212.10528",
+        "arxiv:2305.09313",
+        "arxiv:2406.18960",
+        "arxiv:2110.01599",
+        "arxiv:2105.03938",
+        "arxiv:2110.01599"
+      ],
+      "gold_ranks": [
+        1
+      ],
+      "refused": false,
+      "answer_text": "When evaluated on a wide range of open-domain QA datasets, our dense retriever outperforms a strong Lucene-BM25 system largely by 9%-19% absolute in terms of top-20 passage retrieval accuracy, and helps our end-to-end QA system establish new state-of-the-art on multiple open-domain QA benchmarks. [1] When evaluated on a number of open-domain retrieval datasets, our re-ranker improves strong unsupervised retrieval models by 6%-18% absolute and strong supervised models by up to 12% in terms of top-20 passage retrieval accuracy. [2] The advent of contextualised language models has brought gains in search effectiveness, not just when applied for re-ranking the output of classical weighting models such as BM25, but also when used directly for passage indexing and retrieval, a technique which is called dense retrieval. [3] Open-domain question answering relies on efficient passage retrieval to select candidate contexts, where traditional sparse vector space models, such as TF-IDF or BM25, are the de facto method. [1]",
+      "backend": "extractive",
+      "confidence": 0.9246,
+      "latency_ms": {
+        "retrieval": 33.5,
+        "generation": 3.2
+      },
+      "cited_doc_ids": [
+        "arxiv:2004.04906",
+        "arxiv:2204.07496",
+        "arxiv:2108.06279"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 1.0,
+        "answer_relevancy": 0.5660937602122836,
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.3333333333333333,
+        "n_citations": 3.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "rag-003",
+      "question": "Which metrics does the RAGAS framework propose for evaluating retrieval-augmented generation without ground-truth annotations?",
+      "gold_doc_ids": [
+        "arxiv:2309.15217"
+      ],
+      "stratum": "rag",
+      "category": "methodological",
+      "difficulty": "medium",
+      "retrieval_challenge": "lexical",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 8.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.125
+      },
+      "retrieved_doc_ids": [
+        "arxiv:2309.15217",
+        "arxiv:2607.01852",
+        "arxiv:2309.15217",
+        "arxiv:2504.19754",
+        "arxiv:2609.02913",
+        "epmc:10.21203/rs.3.rs-10503006/v1",
+        "epmc:42476143",
+        "arxiv:2504.19754",
+        "arxiv:2506.22486",
+        "arxiv:2305.15720"
+      ],
+      "gold_ranks": [
+        1,
+        3
+      ],
+      "refused": false,
+      "answer_text": "With Ragas, we put forward a suite of metrics which can be used to evaluate these different dimensions \\textit{without having to rely on ground truth human annotations}. [1] We evaluate if cluster-based semantic chunking improves retrieval and answer quality compared to fixed-size and recursive chunking evaluating on long, structured academic theses using the Retrieval Augmented Generation Assessment (RAGAs) framework. [2] Retrieval-augmented generation (RAG) is increasingly used in educational question answering, but standard retrievers optimize topical relevance without enforcing curriculum validity. [5] We introduce Ragas (Retrieval Augmented Generation Assessment), a framework for reference-free evaluation of Retrieval Augmented Generation (RAG) pipelines. [1]",
+      "backend": "extractive",
+      "confidence": 1.4296,
+      "latency_ms": {
+        "retrieval": 34.4,
+        "generation": 3.9
+      },
+      "cited_doc_ids": [
+        "arxiv:2309.15217",
+        "arxiv:2607.01852",
+        "arxiv:2609.02913"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.5,
+        "answer_relevancy": 0.7447191676658544,
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.3333333333333333,
+        "n_citations": 3.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "rag-004",
+      "question": "How does HyDE perform zero-shot dense retrieval when no relevance labels are available?",
+      "gold_doc_ids": [
+        "arxiv:2212.10496"
+      ],
+      "stratum": "rag",
+      "category": "methodological",
+      "difficulty": "hard",
+      "retrieval_challenge": "both",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 7.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.14285714285714285
+      },
+      "retrieved_doc_ids": [
+        "arxiv:2212.10496",
+        "arxiv:2212.10496",
+        "arxiv:2305.15720",
+        "arxiv:2204.07496",
+        "arxiv:2204.07496",
+        "arxiv:2307.12114",
+        "epmc:42716112",
+        "arxiv:2212.10528",
+        "arxiv:2108.06279",
+        "arxiv:2305.15720"
+      ],
+      "gold_ranks": [
+        1,
+        2
+      ],
+      "refused": false,
+      "answer_text": "While dense retrieval has been shown effective and efficient across tasks and languages, it remains difficult to create effective fully zero-shot dense retrieval systems when no relevance label is available. [1] In this paper, we recognize the difficulty of zero-shot learning and encoding relevance. [1] Sparse annotation poses persistent challenges to training dense retrieval models; for example, it distorts the training signal when unlabeled relevant documents are used spuriously as negatives in contrastive learning. [3] We propose a simple and effective re-ranking method for improving passage retrieval in open question answering. [5]",
+      "backend": "extractive",
+      "confidence": 0.6138,
+      "latency_ms": {
+        "retrieval": 25.0,
+        "generation": 2.5
+      },
+      "cited_doc_ids": [
+        "arxiv:2212.10496",
+        "arxiv:2305.15720",
+        "arxiv:2204.07496"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.0,
+        "answer_relevancy": 0.5561961521046954,
+        "context_precision": 0.25,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.3333333333333333,
+        "n_citations": 3.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "rag-005",
+      "question": "Where in a long input context do language models use relevant information least reliably?",
+      "gold_doc_ids": [
+        "arxiv:2307.03172"
+      ],
+      "stratum": "rag",
+      "category": "factual",
+      "difficulty": "medium",
+      "retrieval_challenge": "semantic",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 8.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.125
+      },
+      "retrieved_doc_ids": [
+        "arxiv:2307.03172",
+        "arxiv:2307.03172",
+        "arxiv:2504.19754",
+        "arxiv:2602.10271",
+        "arxiv:2503.01763",
+        "arxiv:2405.11357",
+        "arxiv:2507.23334",
+        "arxiv:2504.13684",
+        "arxiv:2502.01549",
+        "arxiv:2507.23334"
+      ],
+      "gold_ranks": [
+        1,
+        2
+      ],
+      "refused": false,
+      "answer_text": "We find that performance can degrade significantly when changing the position of relevant information, indicating that current language models do not robustly make use of information in long input contexts. [1] While recent language models have the ability to take long contexts as input, relatively little is known about how well they use longer context. [1] Due to the limited context length of tool-using LLMs, adopting information retrieval (IR) models to select useful tools from large toolsets is a critical initial step. [5] Understanding multimodal long-context documents that comprise multimodal chunks such as paragraphs, figures, and tables is challenging due to (1) cross-modal heterogeneity to localize relevant information across modalities, (2) cross-page reasoning to aggregate dispersed evidence across pages. [4]",
+      "backend": "extractive",
+      "confidence": 1.0364,
+      "latency_ms": {
+        "retrieval": 32.5,
+        "generation": 4.0
+      },
+      "cited_doc_ids": [
+        "arxiv:2307.03172",
+        "arxiv:2602.10271",
+        "arxiv:2503.01763"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.4,
+        "answer_relevancy": 0.5997216832785653,
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.3333333333333333,
+        "n_citations": 3.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "rag-006",
+      "question": "How does SelfCheckGPT detect hallucinations without access to an external knowledge base?",
+      "gold_doc_ids": [
+        "arxiv:2303.08896"
+      ],
+      "stratum": "rag",
+      "category": "methodological",
+      "difficulty": "hard",
+      "retrieval_challenge": "semantic",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 8.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.125
+      },
+      "retrieved_doc_ids": [
+        "arxiv:2303.08896",
+        "arxiv:2303.08896",
+        "arxiv:2409.11353",
+        "arxiv:2406.11267",
+        "epmc:42385839",
+        "arxiv:2202.11233",
+        "arxiv:2202.11233",
+        "arxiv:2307.06985",
+        "epmc:42533201",
+        "arxiv:2503.21676"
+      ],
+      "gold_ranks": [
+        1,
+        2
+      ],
+      "refused": false,
+      "answer_text": "In this work, we propose \"SelfCheckGPT\", a simple sampling-based approach that can be used to fact-check the responses of black-box models in a zero-resource fashion, i.e. without an external database. [1] THaMES assesses a model's ability to detect and reduce hallucinations across various tasks, including text generation and binary classification, applying optimal mitigation strategies like In-Context Learning (ICL), Retrieval Augmented Generation (RAG), and Parameter-Efficient Fine-tuning (PEFT). [3] We demonstrate that SelfCheckGPT can: i) detect non-factual and factual sentences; and ii) rank passages in terms of factuality. [2] By reducing hallucinations and providing traceable rationale in benchmark-based evaluations, it may help clinicians access reliable information more efficiently in the future. [5]",
+      "backend": "extractive",
+      "confidence": -0.2263,
+      "latency_ms": {
+        "retrieval": 23.7,
+        "generation": 2.8
+      },
+      "cited_doc_ids": [
+        "arxiv:2303.08896",
+        "arxiv:2303.08896",
+        "arxiv:2409.11353",
+        "epmc:42385839"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.75,
+        "answer_relevancy": 0.5267451753737157,
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.5,
+        "n_citations": 4.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "rag-007",
+      "question": "Why is a bi-encoder with cosine similarity preferred over cross-encoder BERT for searching a large passage collection?",
+      "gold_doc_ids": [
+        "arxiv:1908.10084"
+      ],
+      "stratum": "rag",
+      "category": "comparative",
+      "difficulty": "medium",
+      "retrieval_challenge": "both",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 8.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.125
+      },
+      "retrieved_doc_ids": [
+        "arxiv:1908.10084",
+        "arxiv:2110.01599",
+        "arxiv:2004.12832",
+        "epmc:10.21203/rs.3.rs-10186581/v1",
+        "arxiv:2210.05512",
+        "arxiv:2105.03938",
+        "arxiv:2602.00899",
+        "arxiv:2110.01599",
+        "arxiv:2004.12832",
+        "arxiv:2608.09650"
+      ],
+      "gold_ranks": [
+        1
+      ],
+      "refused": false,
+      "answer_text": "BERT (Devlin et al., 2018) and RoBERTa (Liu et al., 2019) has set a new state-of-the-art performance on sentence-pair regression tasks like semantic textual similarity (STS). [1] This task requires access to outside knowledge, which in our case we define to be a large unstructured passage collection. [6] The construction of BERT makes it unsuitable for semantic similarity search as well as for unsupervised tasks like clustering. [1] One key feature of dense passage retrievers (DPR) is the use of separate question and passage encoder in a bi-encoder design. [2]",
+      "backend": "extractive",
+      "confidence": 0.2418,
+      "latency_ms": {
+        "retrieval": 27.3,
+        "generation": 3.5
+      },
+      "cited_doc_ids": [
+        "arxiv:1908.10084",
+        "arxiv:2110.01599",
+        "arxiv:2105.03938"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.0,
+        "answer_relevancy": 0.6848682941331253,
+        "context_precision": 0.16666666666666666,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.3333333333333333,
+        "n_citations": 3.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "rag-008",
+      "question": "What is reciprocal rank fusion and which paper introduced it?",
+      "gold_doc_ids": [
+        "doi:10.1145/1571941.1572114"
+      ],
+      "stratum": "rag",
+      "category": "bibliographic",
+      "difficulty": "easy",
+      "retrieval_challenge": "lexical",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 7.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.14285714285714285
+      },
+      "retrieved_doc_ids": [
+        "doi:10.1145/1571941.1572114",
+        "arxiv:2604.13728",
+        "arxiv:2609.02913",
+        "arxiv:2609.02913",
+        "epmc:10.21203/rs.3.rs-10503006/v1",
+        "arxiv:2408.07303",
+        "arxiv:2604.13728",
+        "arxiv:2408.07303",
+        "arxiv:2305.15720",
+        "epmc:41723900"
+      ],
+      "gold_ranks": [
+        1
+      ],
+      "refused": false,
+      "answer_text": "BIBLIOGRAPHIC RECORD (no open-access abstract available)\nTitle: Reciprocal rank fusion outperforms condorcet and individual rank learning methods\nAuthors: Gordon V. [1] We present CHSR-RRF, a curriculum-gated hybrid retrieval framework that applies metadata constraints before retrieval, then combines sparse and dense search with reciprocal rank fusion and deterministic reranking. [3] Our model significantly outperforms existing state-of-the-art models on standard VQA datasets, including VQA v2.0 and COCO-QA, in terms of both accuracy and Mean Reciprocal Rank (MRR). [6] The framework implements and allows the comparison of four retrievalconfigurations: sparse, dense, hybrid, and hybrid with cross-encoder re-ranking, using a weighted Re-ciprocal Rank Fusion (RRF) mechanism. [5]",
+      "backend": "extractive",
+      "confidence": -0.3188,
+      "latency_ms": {
+        "retrieval": 21.6,
+        "generation": 4.5
+      },
+      "cited_doc_ids": [
+        "doi:10.1145/1571941.1572114",
+        "arxiv:2609.02913",
+        "epmc:10.21203/rs.3.rs-10503006/v1",
+        "arxiv:2408.07303"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.6666666666666666,
+        "answer_relevancy": 0.3696473282933308,
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.25,
+        "n_citations": 4.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "rag-009",
+      "question": "How does ColBERT differ from a single-vector dense retriever?",
+      "gold_doc_ids": [
+        "arxiv:2004.12832"
+      ],
+      "stratum": "rag",
+      "category": "comparative",
+      "difficulty": "hard",
+      "retrieval_challenge": "lexical",
+      "metrics": {
+        "mrr": 0.3333333333333333,
+        "map": 0.3333333333333333,
+        "ndcg@10": 0.5,
+        "first_relevant_rank": 3.0,
+        "n_documents_retrieved": 7.0,
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.14285714285714285
+      },
+      "retrieved_doc_ids": [
+        "arxiv:2108.06279",
+        "arxiv:2212.10496",
+        "arxiv:2108.06279",
+        "arxiv:2004.12832",
+        "arxiv:2004.04906",
+        "arxiv:2004.12832",
+        "arxiv:2212.10496",
+        "arxiv:2609.31660",
+        "arxiv:2010.08191",
+        "arxiv:2005.11401"
+      ],
+      "gold_ranks": [
+        4,
+        6
+      ],
+      "refused": false,
+      "answer_text": "Our experiments show that HyDE significantly outperforms the state-of-the-art unsupervised dense retriever Contriever and shows strong performance comparable to fine-tuned retrievers, across various tasks (e.g. web search, QA, fact verification) and languages~(e.g. sw, ko, ja). [2] When evaluated on a wide range of open-domain QA datasets, our dense retriever outperforms a strong Lucene-BM25 system largely by 9%-19% absolute in terms of top-20 passage retrieval accuracy, and helps our end-to-end QA system establish new state-of-the-art on multiple open-domain QA benchmarks. [5] In the existing literature in neural ranking, two dense retrieval families have become apparent: single representation, where entire passages are represented by a single embedding (usually BERT's [CLS] token, as exemplified by the recent ANCE approach), or multiple representations, where each token in a passage is represented by its own embedding (as exemplified by the recent ColBERT approach). [1] The advent of contextualised language models has brought gains in search effectiveness, not just when applied for re-ranking the output of classical weighting models such as BM25, but also when used directly for passage indexing and retrieval, a technique which is called dense retrieval. [1]",
+      "backend": "extractive",
+      "confidence": -0.1244,
+      "latency_ms": {
+        "retrieval": 19.9,
+        "generation": 4.3
+      },
+      "cited_doc_ids": [
+        "arxiv:2108.06279",
+        "arxiv:2212.10496",
+        "arxiv:2004.04906"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.3333333333333333,
+        "answer_relevancy": 0.40151539759695404,
+        "context_precision": 0.25,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.0,
+        "n_citations": 3.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 0.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "rag-010",
+      "question": "What does the Fusion-in-Decoder architecture do with multiple retrieved passages?",
+      "gold_doc_ids": [
+        "arxiv:2007.01282"
+      ],
+      "stratum": "rag",
+      "category": "methodological",
+      "difficulty": "medium",
+      "retrieval_challenge": "both",
+      "metrics": {
+        "mrr": 0.5,
+        "map": 0.5,
+        "ndcg@10": 0.6309297535714575,
+        "first_relevant_rank": 2.0,
+        "n_documents_retrieved": 10.0,
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.1
+      },
+      "retrieved_doc_ids": [
+        "arxiv:2101.00294",
+        "arxiv:2007.01282",
+        "arxiv:2207.03030",
+        "arxiv:2108.06279",
+        "arxiv:2009.12188",
+        "arxiv:2506.22486",
+        "arxiv:2204.07496",
+        "arxiv:2005.11401",
+        "arxiv:1706.03762",
+        "arxiv:2010.08191"
+      ],
+      "gold_ranks": [
+        2
+      ],
+      "refused": true,
+      "answer_text": "INSUFFICIENT_CONTEXT",
+      "backend": "abstention_gate",
+      "confidence": -0.9675,
+      "latency_ms": {
+        "retrieval": 32.5
+      },
+      "cited_doc_ids": [],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_precision": 0.16666666666666666,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.0,
+        "n_citations": 0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.0,
+        "gold_documents_cited": 0.0,
+        "refused": 1.0,
+        "over_refusal": 1.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "mth-001",
+      "question": "How does a Vision Transformer process an image without using convolutions?",
+      "gold_doc_ids": [
+        "arxiv:2010.11929"
+      ],
+      "stratum": "methods",
+      "category": "methodological",
+      "difficulty": "easy",
+      "retrieval_challenge": "semantic",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 7.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.14285714285714285
+      },
+      "retrieved_doc_ids": [
+        "arxiv:2010.11929",
+        "arxiv:2103.14030",
+        "arxiv:2103.14030",
+        "arxiv:2302.11184",
+        "arxiv:2111.10480",
+        "arxiv:2510.12021",
+        "epmc:10.21203/rs.3.rs-8735303/v1",
+        "arxiv:2302.11184",
+        "arxiv:2111.14791",
+        "epmc:10.21203/rs.3.rs-8735303/v1"
+      ],
+      "gold_ranks": [
+        1
+      ],
+      "refused": false,
+      "answer_text": "This study evaluates the explainability of different Vision Transformer architectures and pre-training strategies - ViT, DeiT, DINO, and Swin Transformer - using Gradient Attention Rollout and Grad-CAM. [6] When pre-trained on large amounts of data and transferred to multiple mid-sized or small image recognition benchmarks (ImageNet, CIFAR-100, VTAB, etc.), Vision Transformer (ViT) attains excellent results compared to state-of-the-art convolutional networks while requiring substantially fewer computational resources to train. [1] These qualities of Swin Transformer make it compatible with a broad range of vision tasks, including image classification (87.3 top-1 accuracy on ImageNet-1K) and dense prediction tasks such as object detection (58.7 box AP and 51.1 mask AP on COCO test-dev) and semantic segmentation (53.5 mIoU on ADE20K val). [3] While the Transformer architecture has become the de-facto standard for natural language processing tasks, its applications to computer vision remain limited. [1]",
+      "backend": "extractive",
+      "confidence": 0.2301,
+      "latency_ms": {
+        "retrieval": 30.3,
+        "generation": 2.2
+      },
+      "cited_doc_ids": [
+        "arxiv:2010.11929",
+        "arxiv:2103.14030",
+        "arxiv:2510.12021"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.3333333333333333,
+        "answer_relevancy": 0.5010155932848392,
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.3333333333333333,
+        "n_citations": 3.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "mth-002",
+      "question": "What is Swin UNETR and what kind of pre-training data was it demonstrated on?",
+      "gold_doc_ids": [
+        "arxiv:2111.14791"
+      ],
+      "stratum": "methods",
+      "category": "methodological",
+      "difficulty": "medium",
+      "retrieval_challenge": "lexical",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 6.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.16666666666666666
+      },
+      "retrieved_doc_ids": [
+        "arxiv:2111.14791",
+        "arxiv:2111.14791",
+        "arxiv:2510.12021",
+        "arxiv:2201.01266",
+        "epmc:41610783",
+        "arxiv:2201.01266",
+        "arxiv:2210.15133",
+        "arxiv:2408.08070",
+        "arxiv:2210.15133",
+        "arxiv:2408.08070"
+      ],
+      "gold_ranks": [
+        1,
+        2
+      ],
+      "refused": true,
+      "answer_text": "INSUFFICIENT_CONTEXT",
+      "backend": "abstention_gate",
+      "confidence": -0.7105,
+      "latency_ms": {
+        "retrieval": 22.7
+      },
+      "cited_doc_ids": [],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_precision": 0.25,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.0,
+        "n_citations": 0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.0,
+        "gold_documents_cited": 0.0,
+        "refused": 1.0,
+        "over_refusal": 1.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "mth-003",
+      "question": "Why does MONAI exist as a separate framework rather than using plain PyTorch for medical imaging?",
+      "gold_doc_ids": [
+        "arxiv:2211.02701"
+      ],
+      "stratum": "methods",
+      "category": "methodological",
+      "difficulty": "medium",
+      "retrieval_challenge": "semantic",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 9.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.1111111111111111
+      },
+      "retrieved_doc_ids": [
+        "arxiv:2211.02701",
+        "arxiv:2211.02701",
+        "arxiv:0911.5046",
+        "arxiv:2302.11184",
+        "epmc:42708298",
+        "epmc:pmc13260647",
+        "arxiv:2111.14791",
+        "epmc:pmc13629001",
+        "epmc:42082780",
+        "arxiv:2011.11052"
+      ],
+      "gold_ranks": [
+        1,
+        2
+      ],
+      "refused": false,
+      "answer_text": "MONAI extends PyTorch to support medical data, with a particular focus on imaging, and provide purpose-specific AI model architectures, transformations and utilities that streamline the development and deployment of medical AI models. [1] Although numerous methods have been developed to generate explanations of model behavior, their evaluation has predominantly relied on technical performance metrics rather than clinician-centered assessment. [6] This document describes the BM25 and BM25F implementation using the Lucene Java Framework. [3] MONAI follows best practices for software-development, providing an easy-to-use, robust, well-documented, and well-tested software framework. [2]",
+      "backend": "extractive",
+      "confidence": 0.365,
+      "latency_ms": {
+        "retrieval": 31.2,
+        "generation": 2.4
+      },
+      "cited_doc_ids": [
+        "arxiv:2211.02701",
+        "arxiv:2211.02701",
+        "arxiv:0911.5046",
+        "epmc:pmc13260647"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.6,
+        "answer_relevancy": 0.6546635781330562,
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.5,
+        "n_citations": 4.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "mth-004",
+      "question": "How does the 3D U-Net learn dense volumetric segmentation from only a few annotated slices?",
+      "gold_doc_ids": [
+        "arxiv:1606.06650"
+      ],
+      "stratum": "methods",
+      "category": "methodological",
+      "difficulty": "medium",
+      "retrieval_challenge": "both",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 8.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.125
+      },
+      "retrieved_doc_ids": [
+        "arxiv:1606.06650",
+        "arxiv:1606.06650",
+        "epmc:42633605",
+        "epmc:42633605",
+        "arxiv:1809.10486",
+        "epmc:pmc13256239",
+        "arxiv:2411.01896",
+        "epmc:pmc13582496",
+        "arxiv:2006.16806",
+        "epmc:10.21203/rs.3.rs-7112498/v1"
+      ],
+      "gold_ranks": [
+        1,
+        2
+      ],
+      "refused": false,
+      "answer_text": "This paper introduces a network for volumetric segmentation that learns from sparsely annotated volumetric images. [1] The network learns from these sparse annotations and provides a dense 3D segmentation. [1] The proposed framework utilizes EfficientNet-based convolutional neural networks for multi-class brain tumor classification and U-Net++ architectures with EfficientNet encoders for tumor segmentation. [6] We will present a 3D U-Net-based deep learning model of volumetric segmentation of spinal cord MRI data in Digital Imaging and Communications in Medicine (.dcm) format in this research. [4]",
+      "backend": "extractive",
+      "confidence": 1.535,
+      "latency_ms": {
+        "retrieval": 26.9,
+        "generation": 3.7
+      },
+      "cited_doc_ids": [
+        "arxiv:1606.06650",
+        "epmc:42633605",
+        "epmc:pmc13256239"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.75,
+        "answer_relevancy": 0.7137004597801896,
+        "context_precision": 0.25,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.3333333333333333,
+        "n_citations": 3.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "mth-005",
+      "question": "What does nnU-Net self-configure, and on which challenge was it evaluated?",
+      "gold_doc_ids": [
+        "arxiv:1809.10486"
+      ],
+      "stratum": "methods",
+      "category": "methodological",
+      "difficulty": "medium",
+      "retrieval_challenge": "lexical",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 7.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.14285714285714285
+      },
+      "retrieved_doc_ids": [
+        "arxiv:1809.10486",
+        "arxiv:1809.10486",
+        "epmc:pmc13545556",
+        "epmc:pmc13545556",
+        "epmc:pmc12552493",
+        "arxiv:2609.16873",
+        "epmc:10.21203/rs.3.rs-11205837/v1",
+        "arxiv:2202.05268",
+        "arxiv:2609.16873",
+        "epmc:42554980"
+      ],
+      "gold_ranks": [
+        1,
+        2
+      ],
+      "refused": false,
+      "answer_text": "We evaluate the nnU-Net in the context of the Medical Segmentation Decathlon challenge, which measures segmentation performance in ten disciplines comprising distinct entities, image modalities, image geometries and dataset sizes, with no manual adjustments between datasets allowed. [1] At the time of manuscript submission, nnU-Net achieves the highest mean dice scores across all classes and seven phase 1 tasks (except class 1 in BrainTumour) in the online leaderboard of the challenge. [1] Evaluated on the BRATS 2020 dataset, MM-MSCA-AF achieves a Dice value of 0.8158 for necrotic tumor regions and 0.8589 in total, outperforming state-of-the-art architectures such as U-Net, nnU-Net, and Attention U-Net. [5] NeuroTS-Net was trained on the BraTS 2026 pediatric dataset without external data or pretrained weights and evaluated against nnU-Net and MedNeXt under the same experimental protocol. [6]",
+      "backend": "extractive",
+      "confidence": -0.1672,
+      "latency_ms": {
+        "retrieval": 25.9,
+        "generation": 1.7
+      },
+      "cited_doc_ids": [
+        "arxiv:1809.10486",
+        "epmc:pmc12552493",
+        "arxiv:2609.16873"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.5,
+        "answer_relevancy": 0.4386464877150941,
+        "context_precision": 0.25,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.3333333333333333,
+        "n_citations": 3.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "mth-006",
+      "question": "How does Grad-CAM produce a visual explanation from a convolutional network?",
+      "gold_doc_ids": [
+        "arxiv:1610.02391"
+      ],
+      "stratum": "methods",
+      "category": "methodological",
+      "difficulty": "easy",
+      "retrieval_challenge": "semantic",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 7.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.14285714285714285
+      },
+      "retrieved_doc_ids": [
+        "arxiv:1610.02391",
+        "epmc:41740094",
+        "arxiv:1610.02391",
+        "epmc:41740094",
+        "epmc:41108904",
+        "arxiv:2510.12021",
+        "epmc:10.64898/2026.07.14.26358065",
+        "epmc:41108904",
+        "epmc:10.21203/rs.3.rs-7458110/v1",
+        "epmc:pmc12941976"
+      ],
+      "gold_ranks": [
+        1,
+        3
+      ],
+      "refused": false,
+      "answer_text": "Popular visual explanation methods like Grad-CAM use a single convolutional layer, potentially missing multi-scale cues and producing unstable saliency maps. [2] Our approach - Gradient-weighted Class Activation Mapping (Grad-CAM), uses the gradients of any target concept, flowing into the final convolutional layer to produce a coarse localization map highlighting important regions in the image for predicting the concept. [1] Among various XAI techniques, Gradient-weighted Class Activation Mapping (Grad-CAM) stands out for its ability to visually interpret Convolutional Neural Networks (CNNs) by highlighting image regions that contribute significantly to decision-making. [5] We introduce Winsor-CAM, a single-pass gradient-based method that aggregates Grad-CAM maps from all convolutional layers and applies percentile-based Winsorization to attenuate outlier contributions. [2]",
+      "backend": "extractive",
+      "confidence": 1.0347,
+      "latency_ms": {
+        "retrieval": 30.6,
+        "generation": 4.2
+      },
+      "cited_doc_ids": [
+        "arxiv:1610.02391",
+        "epmc:41740094",
+        "epmc:41108904"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 1.0,
+        "answer_relevancy": 0.6367292509532534,
+        "context_precision": 0.25,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.3333333333333333,
+        "n_citations": 3.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "mth-007",
+      "question": "What problem do shifted windows solve in the Swin Transformer?",
+      "gold_doc_ids": [
+        "arxiv:2103.14030"
+      ],
+      "stratum": "methods",
+      "category": "methodological",
+      "difficulty": "hard",
+      "retrieval_challenge": "both",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 8.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.125
+      },
+      "retrieved_doc_ids": [
+        "arxiv:2103.14030",
+        "arxiv:2103.14030",
+        "arxiv:2201.01266",
+        "epmc:41805501",
+        "arxiv:2201.01266",
+        "epmc:pmc13106155",
+        "arxiv:2111.14791",
+        "arxiv:2510.12021",
+        "epmc:41723900",
+        "arxiv:2405.14554"
+      ],
+      "gold_ranks": [
+        1,
+        2
+      ],
+      "refused": false,
+      "answer_text": "The swin transformer encoder extracts features at five different resolutions by utilizing shifted windows for computing self-attention and is connected to an FCNN-based decoder at each resolution via skip connections. [3] Specifically, the task of 3D brain tumor semantic segmentation is reformulated as a sequence to sequence prediction problem wherein multi-modal input data is projected into a 1D sequence of embedding and used as an input to a hierarchical Swin transformer as the encoder. [3] The shifted windowing scheme brings greater efficiency by limiting self-attention computation to non-overlapping local windows while also allowing for cross-window connection. [1] This paper presents a new vision Transformer, called Swin Transformer, that capably serves as a general-purpose backbone for computer vision. [1]",
+      "backend": "extractive",
+      "confidence": 0.0148,
+      "latency_ms": {
+        "retrieval": 20.3,
+        "generation": 3.2
+      },
+      "cited_doc_ids": [
+        "arxiv:2103.14030",
+        "arxiv:2201.01266"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 1.0,
+        "answer_relevancy": 0.42694888203964965,
+        "context_precision": 0.25,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.5,
+        "n_citations": 2.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "mth-008",
+      "question": "Why is subject-level data splitting important when evaluating deep learning on brain MRI?",
+      "gold_doc_ids": [
+        "epmc:pmc13085064",
+        "manual:rahim2025-mci-ad-multiview"
+      ],
+      "stratum": "methods",
+      "category": "methodological",
+      "difficulty": "hard",
+      "retrieval_challenge": "semantic",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 0.75,
+        "ndcg@10": 0.8772153153380493,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 9.0,
+        "hit@1": 1.0,
+        "recall@1": 0.5,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 0.5,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.2222222222222222
+      },
+      "retrieved_doc_ids": [
+        "epmc:pmc13085064",
+        "epmc:pmc13583082",
+        "epmc:42708298",
+        "epmc:42708298",
+        "manual:rahim2025-mci-ad-multiview",
+        "epmc:42593101",
+        "epmc:pmc12453851",
+        "epmc:pmc12387691",
+        "epmc:pmc13262964",
+        "epmc:pmc13219310"
+      ],
+      "gold_ranks": [
+        1,
+        5
+      ],
+      "refused": false,
+      "answer_text": "An explainable full-head 3D deep learning framework based on DenseNet-121 with transfer learning from MedicalNet was proposed and applied to T1 MP-RAGE MRI data from the ADNI dataset. [2] To preserve longitudinal validity and reduce potential information leakage, multiple follow-up visits per subject were included and a strict subject-level data splitting strategy was adopted. [1] Deep learning (DL)-based image enhancement is widely used to improve suboptimal medical imaging. [6] A nested multi-head framework was implemented for sequential learning of related binary classification tasks from structural MRI slices. [3]",
+      "backend": "extractive",
+      "confidence": 0.668,
+      "latency_ms": {
+        "retrieval": 28.9,
+        "generation": 2.1
+      },
+      "cited_doc_ids": [
+        "epmc:pmc13085064",
+        "epmc:pmc13583082",
+        "epmc:42708298",
+        "epmc:42593101"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 1.0,
+        "answer_relevancy": 0.6142873829726838,
+        "context_precision": 0.4,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.25,
+        "n_citations": 4.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "mth-009",
+      "question": "Which datasets were used to train a streamlined CNN pipeline for distinguishing Alzheimer's, MCI and healthy controls?",
+      "gold_doc_ids": [
+        "epmc:42400646"
+      ],
+      "stratum": "methods",
+      "category": "factual",
+      "difficulty": "easy",
+      "retrieval_challenge": "lexical",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 9.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.1111111111111111
+      },
+      "retrieved_doc_ids": [
+        "epmc:42400646",
+        "epmc:42400646",
+        "epmc:pmc12842745",
+        "epmc:42240570",
+        "epmc:pmc13219310",
+        "epmc:42264112",
+        "arxiv:2004.04668",
+        "epmc:10.1101/2025.07.10.664260",
+        "arxiv:2311.02115",
+        "epmc:41687394"
+      ],
+      "gold_ranks": [
+        1,
+        2
+      ],
+      "refused": false,
+      "answer_text": "Our study focused on a deep learning approach, specifically a convolutional neural network (CNN), to distinguish between Alzheimer's, Mild Cognitive Impairment (MCI), and healthy individuals. [1] Training was performed in two stages: a paired 3T-7T dataset from healthy adults was used for initial superresolution learning, and the Alzheimer's Disease Neuroimaging Initiative (ADNI) dataset, including AD, MCI, and cognitively normal (CN) subjects, was used for refinement and classification. [6] After carefully preparing the ADNI data (which included 21,324 MRI images: 7,572 from MCI patients, 5,904 from healthy controls, and 7,848 from Alzheimer's patients) and the OASIS data (6,400 MRI images), our model performed exceptionally well. [1] Binary classification tasks distinguishing clinically diagnosed Alzheimer's disease (AD) patients from cognitively normal (CN) controls consistently reported high performance (>90% accuracy, AUC ≥ 0.95). [5]",
+      "backend": "extractive",
+      "confidence": 1.2234,
+      "latency_ms": {
+        "retrieval": 31.1,
+        "generation": 2.5
+      },
+      "cited_doc_ids": [
+        "epmc:42400646",
+        "epmc:pmc13219310",
+        "epmc:42264112"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 1.0,
+        "answer_relevancy": 0.6819265277391754,
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.3333333333333333,
+        "n_citations": 3.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "mth-010",
+      "question": "What volumetric features were extracted with the CAT12 toolbox for time-distributed Alzheimer's classification?",
+      "gold_doc_ids": [
+        "epmc:42240570"
+      ],
+      "stratum": "methods",
+      "category": "numeric",
+      "difficulty": "hard",
+      "retrieval_challenge": "lexical",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 8.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.125
+      },
+      "retrieved_doc_ids": [
+        "epmc:42240570",
+        "epmc:42240570",
+        "epmc:42498651",
+        "epmc:42815436",
+        "epmc:42815436",
+        "epmc:pmc12290913",
+        "epmc:pmc12824133",
+        "epmc:42648195",
+        "epmc:pmc13454240",
+        "epmc:pmc13276304"
+      ],
+      "gold_ranks": [
+        1,
+        2
+      ],
+      "refused": false,
+      "answer_text": "In the initial phase, volumetric changes, comprising cortical thickness, white matter, grey matter, cerebrospinal fluid, and total intracranial volume, were derived from the Alzheimer's Disease Neuroimaging Initiative (ADNI) dataset utilizing the CAT12 toolbox in statistical parametric mapping (SPM). [1] The extracted features are then optimized using the HkTO algorithm to select the most relevant and non-redundant features, thereby dropping feature dimensionality. [5] Afterward, deep features are extracted using transfer learning models, namely InceptionResNetV2, DenseEfficientNet-B3, and ConvoGoogleNet, to attain discriminative feature representations. [4] Volumetric features were grouped into frontal, medial, and lateral regions, with left-right and anteroposterior asymmetry indices. [3]",
+      "backend": "extractive",
+      "confidence": 1.2463,
+      "latency_ms": {
+        "retrieval": 26.8,
+        "generation": 2.8
+      },
+      "cited_doc_ids": [
+        "epmc:42240570",
+        "epmc:42498651",
+        "epmc:42815436",
+        "epmc:42815436"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 1.0,
+        "answer_relevancy": 0.6905157389413479,
+        "context_precision": 0.25,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.25,
+        "n_citations": 4.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "mth-011",
+      "question": "How does a multi-modal fusion framework combine several MRI sequences for brain tumour segmentation?",
+      "gold_doc_ids": [
+        "epmc:10.21203/rs.3.rs-7112498/v1"
+      ],
+      "stratum": "methods",
+      "category": "methodological",
+      "difficulty": "medium",
+      "retrieval_challenge": "semantic",
+      "metrics": {
+        "mrr": 0.5,
+        "map": 0.5,
+        "ndcg@10": 0.6309297535714575,
+        "first_relevant_rank": 2.0,
+        "n_documents_retrieved": 8.0,
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.125
+      },
+      "retrieved_doc_ids": [
+        "epmc:pmc12552493",
+        "epmc:10.21203/rs.3.rs-7112498/v1",
+        "epmc:40402698",
+        "epmc:10.21203/rs.3.rs-7112498/v1",
+        "epmc:41468638",
+        "epmc:38150339",
+        "epmc:40402698",
+        "epmc:42107353",
+        "epmc:40081274",
+        "epmc:42225491"
+      ],
+      "gold_ranks": [
+        2,
+        4
+      ],
+      "refused": false,
+      "answer_text": "## Abstract Purpose: This study aims to develop a novel multi-modal fusion framework for brain tumor segmentation that integrates spatial-language-vision information through bidirectional interactive attention mechanisms to improve segmentation accuracy and boundary delineation. [2] This paper presents a novel Multi-Modal Multi-Scale Contextual Aggregation with Attention Fusion (MM-MSCA-AF) framework that leverages multi-modal MRI images (T1, T2, FLAIR, and T1-CE) to enhance segmentation performance. [1] Accurate segmentation of brain tumors from multi-modal MRI scans is critical for diagnosis, treatment planning, and disease monitoring. [1] However, existing methods struggle to effectively fuse multi-modal information from MRI sequences and often fail to perform modality-specific feature extraction, which hinders accurate tumor segmentation. [3]",
+      "backend": "extractive",
+      "confidence": 1.3741,
+      "latency_ms": {
+        "retrieval": 32.6,
+        "generation": 3.0
+      },
+      "cited_doc_ids": [
+        "epmc:pmc12552493",
+        "epmc:10.21203/rs.3.rs-7112498/v1",
+        "epmc:40402698"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.75,
+        "answer_relevancy": 0.7892435597588237,
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.3333333333333333,
+        "n_citations": 3.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "cli-001",
+      "question": "What structural brain change is described as a key sign of Alzheimer's disease in MRI-based classification work?",
+      "gold_doc_ids": [
+        "epmc:41830915"
+      ],
+      "stratum": "clinical",
+      "category": "factual",
+      "difficulty": "easy",
+      "retrieval_challenge": "semantic",
+      "metrics": {
+        "mrr": 0.5,
+        "map": 0.5,
+        "ndcg@10": 0.6309297535714575,
+        "first_relevant_rank": 2.0,
+        "n_documents_retrieved": 9.0,
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.1111111111111111
+      },
+      "retrieved_doc_ids": [
+        "epmc:42082780",
+        "epmc:41830915",
+        "epmc:pmc13454240",
+        "epmc:pmc12290913",
+        "epmc:41991821",
+        "epmc:pmc13106155",
+        "epmc:40776602",
+        "epmc:41698489",
+        "epmc:pmc13600014",
+        "epmc:pmc13106155"
+      ],
+      "gold_ranks": [
+        2
+      ],
+      "refused": true,
+      "answer_text": "INSUFFICIENT_CONTEXT",
+      "backend": "abstention_gate",
+      "confidence": -1.1468,
+      "latency_ms": {
+        "retrieval": 30.9
+      },
+      "cited_doc_ids": [],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_precision": 0.16666666666666666,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.0,
+        "n_citations": 0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.0,
+        "gold_documents_cited": 0.0,
+        "refused": 1.0,
+        "over_refusal": 1.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "cli-002",
+      "question": "How does the number of afflicted biomarker classes relate to Clinical Dementia Rating sum-of-boxes scores?",
+      "gold_doc_ids": [
+        "epmc:pmc13392201"
+      ],
+      "stratum": "clinical",
+      "category": "factual",
+      "difficulty": "hard",
+      "retrieval_challenge": "lexical",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 9.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.1111111111111111
+      },
+      "retrieved_doc_ids": [
+        "epmc:pmc13392201",
+        "epmc:pmc13392201",
+        "epmc:pmc13279448",
+        "epmc:42554980",
+        "epmc:pmc13239292",
+        "epmc:42541425",
+        "epmc:pmc13506179",
+        "epmc:pmc13467552",
+        "epmc:pmc12545699",
+        "epmc:pmc13439745"
+      ],
+      "gold_ranks": [
+        1,
+        2
+      ],
+      "refused": false,
+      "answer_text": "Using previously validated algorithms, N = 988 PET (+) subjects of the Alzheimer's Disease Neuroimaging Initiative (ADNI) were assigned to groups \"afflicted by\" or \"resilient against\" the effects of central nervous system amyloid-β (Aβ), plasma adipokines, and/or neurodegeneration and tested against Clinical Dementia Rating Scale-Sum of Boxes (CDR-SB) and time to dementia conversion. [1] Moderate progression was defined as a ≥ 2.5-point increase in the Clinical Dementia Rating Scale Sum of Boxes (baseline mean CDR-SB of 1.2, range 0-10 points). [6] 327/988 (33.1%) were afflicted by a single biomarker. [2] Agreement between QDRS and CDR Global scores was 69% (κ = 0.36), and comparable between racial groups. [4]",
+      "backend": "extractive",
+      "confidence": 0.9989,
+      "latency_ms": {
+        "retrieval": 35.0,
+        "generation": 1.7
+      },
+      "cited_doc_ids": [
+        "epmc:pmc13392201",
+        "epmc:pmc13392201",
+        "epmc:42554980",
+        "epmc:42541425"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.75,
+        "answer_relevancy": 0.7315066029677352,
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.5,
+        "n_citations": 4.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "cli-003",
+      "question": "What is the NIA-AA ATN framework used for in Alzheimer's research cohorts?",
+      "gold_doc_ids": [
+        "epmc:pmc13281289"
+      ],
+      "stratum": "clinical",
+      "category": "definitional",
+      "difficulty": "medium",
+      "retrieval_challenge": "lexical",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 8.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.125
+      },
+      "retrieved_doc_ids": [
+        "epmc:pmc13281289",
+        "epmc:pmc13222934",
+        "epmc:pmc12545699",
+        "epmc:pmc12545699",
+        "epmc:pmc12459282",
+        "epmc:pmc13084539",
+        "epmc:pmc13582496",
+        "epmc:pmc13084539",
+        "epmc:pmc13552195",
+        "epmc:42351711"
+      ],
+      "gold_ranks": [
+        1
+      ],
+      "refused": false,
+      "answer_text": "The study included n = 1,041 (n = 802 cognitively unimpaired and n = 239 cognitively impaired) participants who underwent biological classification using the NIA-AA \"ATN\" framework. [1] Background and objectivesTau-PET is increasingly used in Alzheimer disease (AD) clinical trials, both for participant selection based on disease stage and as an outcome measure. [5] The ATN framework (Amyloid, Tau, Neurodegeneration) aids in stratifying MCI risk. [2] These contributions are underlain by an improved understanding of biological mechanisms of disease progression in AD and highlight ADNI's central role in advancing translational research and accelerating progress toward more effective, individualized care for patients with AD. [6]",
+      "backend": "extractive",
+      "confidence": 0.7546,
+      "latency_ms": {
+        "retrieval": 28.3,
+        "generation": 1.9
+      },
+      "cited_doc_ids": [
+        "epmc:pmc13281289",
+        "epmc:pmc13222934",
+        "epmc:pmc12459282",
+        "epmc:pmc13084539"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 1.0,
+        "answer_relevancy": 0.7274233382817801,
+        "context_precision": 0.2,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.25,
+        "n_citations": 4.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "cli-004",
+      "question": "Why is late fusion of independently extracted per-view features considered a limitation in multi-view MRI diagnosis?",
+      "gold_doc_ids": [
+        "epmc:41805501"
+      ],
+      "stratum": "clinical",
+      "category": "methodological",
+      "difficulty": "hard",
+      "retrieval_challenge": "both",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 7.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.14285714285714285
+      },
+      "retrieved_doc_ids": [
+        "epmc:41805501",
+        "manual:rahim2025-mci-ad-multiview",
+        "epmc:41805501",
+        "manual:rahim2025-mci-ad-multiview",
+        "epmc:pmc13027856",
+        "epmc:pmc12552493",
+        "epmc:42024926",
+        "epmc:pmc13262964",
+        "epmc:42679753",
+        "epmc:pmc13027856"
+      ],
+      "gold_ranks": [
+        1,
+        3
+      ],
+      "refused": false,
+      "answer_text": "Although deep learning has advanced prostate MRI analysis, many existing approaches adopt late fusion strategies that aggregate one-dimensional feature vectors extracted independently from each view, resulting in loss of spatial information and anatomical correspondence across views, ultimately limiting diagnostic performance. [1] Accurate diagnosis of clinically significant prostate cancer (csPCa) from multi-view MRI scans (axial, sagittal, and coronal) is essential for effective treatment planning and improved outcomes. [1] Accurate segmentation of brain tumors from multi-modal MRI scans is critical for diagnosis, treatment planning, and disease monitoring. [6] The central idea is multi-view analysis of structural MRI. [2]",
+      "backend": "extractive",
+      "confidence": 1.1378,
+      "latency_ms": {
+        "retrieval": 40.3,
+        "generation": 3.6
+      },
+      "cited_doc_ids": [
+        "epmc:41805501",
+        "manual:rahim2025-mci-ad-multiview",
+        "epmc:pmc12552493"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 1.0,
+        "answer_relevancy": 0.6344187739530062,
+        "context_precision": 0.25,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.3333333333333333,
+        "n_citations": 3.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "cli-005",
+      "question": "Once feature-selection leakage is controlled, what does the multi-compartment benchmark say about predicting MCI-to-AD conversion?",
+      "gold_doc_ids": [
+        "epmc:10.21203/rs.3.rs-10580655/v1"
+      ],
+      "stratum": "clinical",
+      "category": "methodological",
+      "difficulty": "hard",
+      "retrieval_challenge": "both",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 6.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.16666666666666666
+      },
+      "retrieved_doc_ids": [
+        "epmc:10.21203/rs.3.rs-10580655/v1",
+        "epmc:10.21203/rs.3.rs-10580655/v1",
+        "manual:rahim2025-mci-ad-multiview",
+        "epmc:42727648",
+        "epmc:42727648",
+        "epmc:pmc13340103",
+        "epmc:pmc13169499",
+        "epmc:42117479",
+        "epmc:pmc13169499",
+        "epmc:42117479"
+      ],
+      "gold_ranks": [
+        1,
+        2
+      ],
+      "refused": false,
+      "answer_text": "Once data leakage in feature selection is controlled, how much each compartment truly contributes to predicting MCI-to-AD conversion is an open question, and answering it is the point of this benchmark. [1] The paper sits in the MCI-to-AD conversion prediction literature, where the key methodological concerns are subject-level rather than slice-level evaluation, avoidance of data leakage from the same patient appearing in both training and validation folds, and the use of multi-modal or multi-view evidence to improve sensitivity to early neurodegenerative change. [3] This systematic review provides a critical appraisal of DL-based approaches for predicting MCI-to-AD conversion, with particular emphasis on these three key challenges. [4] So, to say it plainly: a blood-based panel already carries most of what is needed to predict MCI to AD conversion, and CSF adds only a little on top of it. [2]",
+      "backend": "extractive",
+      "confidence": 0.5538,
+      "latency_ms": {
+        "retrieval": 40.3,
+        "generation": 2.7
+      },
+      "cited_doc_ids": [
+        "epmc:10.21203/rs.3.rs-10580655/v1",
+        "epmc:10.21203/rs.3.rs-10580655/v1",
+        "manual:rahim2025-mci-ad-multiview",
+        "epmc:42727648"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.4,
+        "answer_relevancy": 0.7385623077631598,
+        "context_precision": 0.25,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.5,
+        "n_citations": 4.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "cli-006",
+      "question": "How does the mesial temporal atrophy visual rating scale relate to hippocampal volumetry?",
+      "gold_doc_ids": [
+        "epmc:10.21203/rs.3.rs-7953365/v1"
+      ],
+      "stratum": "clinical",
+      "category": "factual",
+      "difficulty": "hard",
+      "retrieval_challenge": "lexical",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 6.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.16666666666666666
+      },
+      "retrieved_doc_ids": [
+        "epmc:10.21203/rs.3.rs-7953365/v1",
+        "epmc:10.21203/rs.3.rs-7953365/v1",
+        "epmc:10.21203/rs.3.rs-8824555/v1",
+        "epmc:10.21203/rs.3.rs-8824555/v1",
+        "epmc:pmc13138272",
+        "epmc:pmc12875381",
+        "epmc:10.64898/2026.05.04.26352391",
+        "epmc:pmc13138272",
+        "epmc:10.64898/2026.05.04.26352391",
+        "epmc:42082780"
+      ],
+      "gold_ranks": [
+        1,
+        2
+      ],
+      "refused": false,
+      "answer_text": "The visual assessment of medial temporal atrophy using the Mesial Temporal Atrophy (MTA) scale is commonly employed due to its simplicity; however, it remains subjective. [1] The Mesial Temporal Atrophy (MTA) visual scale is widely used in clinical practice but is inherently subjective, while quantitative MRI-based measurements may provide greater objectivity. [3] Objective: To evaluate the correlation between the MTA visual scale, hippocampal volumetry, and the inferior lateral ventricle–hippocampus ratio in patients with Alzheimer’s dementia. [1] Objective To evaluate the correlation between the MTA visual scale, hippocampal volumetry, and the inferior lateral ventricle–hippocampus (ILV/HPC) ratio in patients with Alzheimer’s dementia. [3]",
+      "backend": "extractive",
+      "confidence": 1.2347,
+      "latency_ms": {
+        "retrieval": 25.2,
+        "generation": 3.5
+      },
+      "cited_doc_ids": [
+        "epmc:10.21203/rs.3.rs-7953365/v1",
+        "epmc:10.21203/rs.3.rs-8824555/v1"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 1.0,
+        "answer_relevancy": 0.7561649696307955,
+        "context_precision": 0.25,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.5,
+        "n_citations": 2.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "cli-007",
+      "question": "What did the author's own published work on multi-view MRI aim to detect, and in what care setting?",
+      "gold_doc_ids": [
+        "manual:rahim2025-mci-ad-multiview"
+      ],
+      "stratum": "clinical",
+      "category": "own_work",
+      "difficulty": "easy",
+      "retrieval_challenge": "none",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 6.0,
+        "hit@1": 1.0,
+        "recall@1": 1.0,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.16666666666666666
+      },
+      "retrieved_doc_ids": [
+        "manual:rahim2025-mci-ad-multiview",
+        "manual:rahim2025-mci-ad-multiview",
+        "epmc:41805501",
+        "epmc:41805501",
+        "epmc:pmc13027856",
+        "arxiv:2006.16806",
+        "epmc:pmc13027856",
+        "epmc:pmc12440570",
+        "epmc:40445813",
+        "arxiv:2006.16806"
+      ],
+      "gold_ranks": [
+        1,
+        2
+      ],
+      "refused": false,
+      "answer_text": "Rather than relying on a single slice orientation, the method exploits the complementary information available across the standard orthogonal acquisition planes - axial, coronal and sagittal - which is the same multi-view premise pursued in the author's subsequent AD-TriFuseViT framework, where the three orientations are combined through a learned fusion mechanism instead of being treated as independent samples. [1] The central idea is multi-view analysis of structural MRI. [1] Accurate diagnosis of clinically significant prostate cancer (csPCa) from multi-view MRI scans (axial, sagittal, and coronal) is essential for effective treatment planning and improved outcomes. [3] Although deep learning has advanced prostate MRI analysis, many existing approaches adopt late fusion strategies that aggregate one-dimensional feature vectors extracted independently from each view, resulting in loss of spatial information and anatomical correspondence across views, ultimately limiting diagnostic performance. [3]",
+      "backend": "extractive",
+      "confidence": 0.6201,
+      "latency_ms": {
+        "retrieval": 33.3,
+        "generation": 2.6
+      },
+      "cited_doc_ids": [
+        "manual:rahim2025-mci-ad-multiview",
+        "epmc:41805501"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.2,
+        "answer_relevancy": 0.5527751867594561,
+        "context_precision": 0.25,
+        "context_recall": 1.0,
+        "citation_accuracy": 0.5,
+        "n_citations": 2.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "cli-008",
+      "question": "Which three orthogonal MRI acquisition planes are used for multi-view analysis?",
+      "gold_doc_ids": [
+        "epmc:41805501",
+        "manual:rahim2025-mci-ad-multiview"
+      ],
+      "stratum": "clinical",
+      "category": "factual",
+      "difficulty": "easy",
+      "retrieval_challenge": "lexical",
+      "metrics": {
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg@10": 1.0,
+        "first_relevant_rank": 1.0,
+        "n_documents_retrieved": 6.0,
+        "hit@1": 1.0,
+        "recall@1": 0.5,
+        "precision@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 1.0,
+        "precision@3": 0.6666666666666666,
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "precision@5": 0.4,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.3333333333333333
+      },
+      "retrieved_doc_ids": [
+        "manual:rahim2025-mci-ad-multiview",
+        "epmc:41805501",
+        "epmc:41805501",
+        "epmc:pmc13027856",
+        "manual:rahim2025-mci-ad-multiview",
+        "epmc:pmc13027856",
+        "arxiv:2006.16806",
+        "epmc:pmc12326743",
+        "arxiv:2006.16806",
+        "epmc:42248171"
+      ],
+      "gold_ranks": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "refused": false,
+      "answer_text": "Rather than relying on a single slice orientation, the method exploits the complementary information available across the standard orthogonal acquisition planes - axial, coronal and sagittal - which is the same multi-view premise pursued in the author's subsequent AD-TriFuseViT framework, where the three orientations are combined through a learned fusion mechanism instead of being treated as independent samples. [1] The central idea is multi-view analysis of structural MRI. [1] Although deep learning has advanced prostate MRI analysis, many existing approaches adopt late fusion strategies that aggregate one-dimensional feature vectors extracted independently from each view, resulting in loss of spatial information and anatomical correspondence across views, ultimately limiting diagnostic performance. [2] Accurate diagnosis of clinically significant prostate cancer (csPCa) from multi-view MRI scans (axial, sagittal, and coronal) is essential for effective treatment planning and improved outcomes. [2]",
+      "backend": "extractive",
+      "confidence": 0.5777,
+      "latency_ms": {
+        "retrieval": 29.0,
+        "generation": 2.5
+      },
+      "cited_doc_ids": [
+        "manual:rahim2025-mci-ad-multiview",
+        "epmc:41805501"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 1.0,
+        "answer_relevancy": 0.5678991620393644,
+        "context_precision": 0.6666666666666666,
+        "context_recall": 1.0,
+        "citation_accuracy": 1.0,
+        "n_citations": 2.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 2.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "hop-001",
+      "question": "What evaluation risk arises when the same patient contributes multiple slices to both training and validation sets?",
+      "gold_doc_ids": [
+        "epmc:pmc13085064",
+        "epmc:10.21203/rs.3.rs-10580655/v1",
+        "manual:rahim2025-mci-ad-multiview"
+      ],
+      "stratum": "methods",
+      "category": "multi_hop",
+      "difficulty": "hard",
+      "retrieval_challenge": "semantic",
+      "metrics": {
+        "mrr": 0.5,
+        "map": 0.16666666666666666,
+        "ndcg@10": 0.2960819109658652,
+        "first_relevant_rank": 2.0,
+        "n_documents_retrieved": 10.0,
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "hit@3": 1.0,
+        "recall@3": 0.3333333333333333,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 0.3333333333333333,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 0.3333333333333333,
+        "precision@10": 0.1
+      },
+      "retrieved_doc_ids": [
+        "epmc:10.20944/preprints202609.0391.v1",
+        "manual:rahim2025-mci-ad-multiview",
+        "epmc:10.21203/rs.3.rs-8233936/v1",
+        "arxiv:2108.06279",
+        "epmc:pmc12387691",
+        "epmc:10.21203/rs.3.rs-10478728/v1",
+        "epmc:pmc13256239",
+        "epmc:pmc13011762",
+        "epmc:10.32388/4qgqjx",
+        "epmc:pmc13590703"
+      ],
+      "gold_ranks": [
+        2
+      ],
+      "refused": true,
+      "answer_text": "INSUFFICIENT_CONTEXT",
+      "backend": "abstention_gate",
+      "confidence": -1.6711,
+      "latency_ms": {
+        "retrieval": 26.5
+      },
+      "cited_doc_ids": [],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.0,
+        "answer_relevancy": 0.0,
+        "context_precision": 0.16666666666666666,
+        "context_recall": 0.3333333333333333,
+        "citation_accuracy": 0.0,
+        "n_citations": 0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.0,
+        "gold_documents_cited": 0.0,
+        "refused": 1.0,
+        "over_refusal": 1.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "hop-002",
+      "question": "How can a retrieval-augmented system reduce hallucinated claims in generated medical answers?",
+      "gold_doc_ids": [
+        "arxiv:2309.15217",
+        "arxiv:2303.08896",
+        "arxiv:2005.11401"
+      ],
+      "stratum": "rag",
+      "category": "multi_hop",
+      "difficulty": "hard",
+      "retrieval_challenge": "semantic",
+      "metrics": {
+        "mrr": 0.0,
+        "map": 0.0,
+        "ndcg@10": 0.0,
+        "first_relevant_rank": 0.0,
+        "n_documents_retrieved": 8.0,
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "hit@3": 0.0,
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "hit@10": 0.0,
+        "recall@10": 0.0,
+        "precision@10": 0.0
+      },
+      "retrieved_doc_ids": [
+        "epmc:pmc13595421",
+        "epmc:pmc13595421",
+        "epmc:42751889",
+        "epmc:pmc13082540",
+        "epmc:10.21203/rs.3.rs-10186581/v1",
+        "epmc:10.21203/rs.3.rs-8497459/v1",
+        "epmc:42533201",
+        "arxiv:2603.14541",
+        "arxiv:2603.14541",
+        "epmc:10.21203/rs.3.rs-10503006/v1"
+      ],
+      "gold_ranks": [],
+      "refused": false,
+      "answer_text": "Retrieval-augmented generation (RAG) can improve biomedical question answering, but claims about domain-specific retrievers require transparent, reproducible evaluation. [4] Existing approaches, such as retrieval-augmented generation, partially address these issues by grounding answers in source documents; however, the aforementioned problems persist. [1] This paper proposes a domain-specific Retrieval-Augmented Generation (RAG) system tailored for osteoporosis knowledge management, integrating authoritative sources from the International Osteoporosis Foundation and China's National Health Commission. [3] Large language models (LLMs) exhibit extensive medical knowledge but are prone to hallucinations and show low fact-level explainability, limiting clinical adoption and regulatory compliance. [1]",
+      "backend": "extractive",
+      "confidence": 0.6768,
+      "latency_ms": {
+        "retrieval": 34.0,
+        "generation": 2.9
+      },
+      "cited_doc_ids": [
+        "epmc:pmc13595421",
+        "epmc:42751889",
+        "epmc:pmc13082540"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.5,
+        "answer_relevancy": 0.5845256914034483,
+        "context_precision": 0.0,
+        "context_recall": 0.0,
+        "citation_accuracy": 0.0,
+        "n_citations": 3.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 0.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "hop-003",
+      "question": "Why might a hybrid sparse-plus-dense retriever beat either channel alone on biomedical literature search?",
+      "gold_doc_ids": [
+        "arxiv:2004.04906",
+        "doi:10.1145/1571941.1572114"
+      ],
+      "stratum": "rag",
+      "category": "comparative",
+      "difficulty": "hard",
+      "retrieval_challenge": "both",
+      "metrics": {
+        "mrr": 0.5,
+        "map": 0.25,
+        "ndcg@10": 0.38685280723454163,
+        "first_relevant_rank": 2.0,
+        "n_documents_retrieved": 10.0,
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "hit@3": 1.0,
+        "recall@3": 0.5,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 0.5,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 0.5,
+        "precision@10": 0.1
+      },
+      "retrieved_doc_ids": [
+        "epmc:42533201",
+        "arxiv:2004.04906",
+        "arxiv:2305.09313",
+        "arxiv:2604.13728",
+        "epmc:10.21203/rs.3.rs-10503006/v1",
+        "arxiv:2212.10496",
+        "arxiv:2105.03938",
+        "arxiv:2108.06279",
+        "arxiv:2609.02913",
+        "arxiv:2609.31660"
+      ],
+      "gold_ranks": [
+        2
+      ],
+      "refused": false,
+      "answer_text": "We present a hybrid retrieval system for COVID-19 scientific literature, evaluated on the TREC-COVID benchmark (171,332 papers, 50 expert queries). [4] External knowledge sources most frequently comprised biomedical literature databases and clinical guidelines. [1] Our experiments show that HyDE significantly outperforms the state-of-the-art unsupervised dense retriever Contriever and shows strong performance comparable to fine-tuned retrievers, across various tasks (e.g. web search, QA, fact verification) and languages~(e.g. sw, ko, ja). [6] In this work, we show that retrieval can be practically implemented using dense representations alone, where embeddings are learned from a small number of questions and passages by a simple dual-encoder framework. [2]",
+      "backend": "extractive",
+      "confidence": -0.0881,
+      "latency_ms": {
+        "retrieval": 24.4,
+        "generation": 3.1
+      },
+      "cited_doc_ids": [
+        "epmc:42533201",
+        "arxiv:2004.04906",
+        "arxiv:2604.13728",
+        "arxiv:2212.10496"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.2,
+        "answer_relevancy": 0.5329020228930551,
+        "context_precision": 0.16666666666666666,
+        "context_recall": 0.5,
+        "citation_accuracy": 0.25,
+        "n_citations": 4.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 1.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    },
+    {
+      "qid": "hop-004",
+      "question": "What makes transformer-based encoders suitable for both 3D medical segmentation and passage retrieval?",
+      "gold_doc_ids": [
+        "arxiv:2111.14791",
+        "arxiv:1706.03762"
+      ],
+      "stratum": "methods",
+      "category": "comparative",
+      "difficulty": "hard",
+      "retrieval_challenge": "semantic",
+      "metrics": {
+        "mrr": 0.3333333333333333,
+        "map": 0.16666666666666666,
+        "ndcg@10": 0.3065735963827292,
+        "first_relevant_rank": 3.0,
+        "n_documents_retrieved": 8.0,
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "hit@3": 1.0,
+        "recall@3": 0.5,
+        "precision@3": 0.3333333333333333,
+        "hit@5": 1.0,
+        "recall@5": 0.5,
+        "precision@5": 0.2,
+        "hit@10": 1.0,
+        "recall@10": 0.5,
+        "precision@10": 0.125
+      },
+      "retrieved_doc_ids": [
+        "epmc:42225491",
+        "arxiv:2111.10480",
+        "arxiv:2111.14791",
+        "arxiv:2101.00294",
+        "arxiv:2110.01599",
+        "arxiv:2101.00294",
+        "epmc:42225491",
+        "arxiv:2210.05512",
+        "arxiv:2105.03938",
+        "arxiv:2201.01266"
+      ],
+      "gold_ranks": [
+        3
+      ],
+      "refused": false,
+      "answer_text": "Previous work on generalization of DPR mainly focus on testing both encoders in tandem on out-of-distribution (OOD) question-answering (QA) tasks, which is also known as domain adaptation. [5] To answer this question, we inspect different combinations of DPR's question and passage encoder learned from five benchmark QA datasets on both in-domain and out-of-domain questions. [5] Qualitative and quantitative results demonstrate that the proposed Transformer-based model leads to a substantial performance improvement over the baseline methods, confirming the effectiveness of Transformers for medical image registration. [2] Here, we present TransMorph, a hybrid Transformer-ConvNet model for volumetric medical image registration. [2]",
+      "backend": "extractive",
+      "confidence": 0.4567,
+      "latency_ms": {
+        "retrieval": 30.2,
+        "generation": 3.7
+      },
+      "cited_doc_ids": [
+        "arxiv:2111.10480",
+        "arxiv:2110.01599"
+      ],
+      "generation": {
+        "faithfulness": 1.0,
+        "hallucination_rate": 0.0,
+        "answer_correctness": 0.0,
+        "answer_relevancy": 0.549654379927375,
+        "context_precision": 0.2,
+        "context_recall": 0.5,
+        "citation_accuracy": 0.0,
+        "n_citations": 2.0,
+        "fabricated_citation_rate": 0.0,
+        "citation_coverage": 0.8,
+        "gold_documents_cited": 0.0,
+        "refused": 0.0,
+        "over_refusal": 0.0
+      },
+      "unsupported_sentences": []
+    }
+  ],
+  "unanswerable_rows": [
+    {
+      "qid": "ref-001",
+      "question": "What patient-level accuracy does AD-TriFuseViT report on the OASIS-1 dataset for 4-class CDR staging?",
+      "stratum": "clinical",
+      "note": "The hardest case: the framework IS mentioned in the author-supplied record, but no accuracy figure exists anywhere in the corpus. Near-miss context invites a confident fabricated number.",
+      "signals": {
+        "top_dense": 0.442151,
+        "top_rerank": 0.0,
+        "mean_top3": 0.147384,
+        "top_sparse": 34.196913
+      },
+      "top_docs": [
+        "epmc:pmc13476611",
+        "epmc:pmc13523048",
+        "epmc:42815436"
+      ],
+      "refused": true,
+      "answer_text": "INSUFFICIENT_CONTEXT",
+      "refusal_reason": "abstention gate: retrieval confidence -1.565 below calibrated threshold -0.325",
+      "confidence": -1.5647
+    },
+    {
+      "qid": "ref-002",
+      "question": "What Dice score did the TransUNet-3D model achieve on the BraTS 2024 leaderboard?",
+      "stratum": "methods",
+      "note": "Plausible model name and benchmark, neither present.",
+      "signals": {
+        "top_dense": 0.273054,
+        "top_rerank": 0.0,
+        "mean_top3": 0.164718,
+        "top_sparse": 28.509907
+      },
+      "top_docs": [
+        "epmc:42225491",
+        "arxiv:2011.11052",
+        "arxiv:1909.06684"
+      ],
+      "refused": true,
+      "answer_text": "INSUFFICIENT_CONTEXT",
+      "refusal_reason": "abstention gate: retrieval confidence -1.478 below calibrated threshold -0.325",
+      "confidence": -1.478
+    },
+    {
+      "qid": "ref-003",
+      "question": "Which liquid-cooling configuration was used in the datacentre that trained Llama-4?",
+      "stratum": "rag",
+      "note": "Out of domain. An earlier draft asked about GPT-5 and the validator rejected it: GPT-5 genuinely appears in two corpus papers, so that question was not safely unanswerable.",
+      "signals": {
+        "top_dense": 0.193352,
+        "top_rerank": 0.0,
+        "mean_top3": 0.172596,
+        "top_sparse": 8.252609
+      },
+      "top_docs": [
+        "arxiv:2503.00238",
+        "arxiv:2409.11353",
+        "epmc:pmc13332870"
+      ],
+      "refused": true,
+      "answer_text": "INSUFFICIENT_CONTEXT",
+      "refusal_reason": "abstention gate: retrieval confidence -1.439 below calibrated threshold -0.325",
+      "confidence": -1.4386
+    },
+    {
+      "qid": "ref-004",
+      "question": "What is the recommended paediatric dose of lecanemab in milligrams per kilogram?",
+      "stratum": "clinical",
+      "note": "Clinically dangerous if hallucinated - exactly the case abstention exists for.",
+      "signals": {
+        "top_dense": 0.254454,
+        "top_rerank": 0.0,
+        "mean_top3": 0.24561,
+        "top_sparse": 8.733948
+      },
+      "top_docs": [
+        "epmc:pmc13610423",
+        "epmc:pmc13445492",
+        "epmc:pmc13610423"
+      ],
+      "refused": true,
+      "answer_text": "INSUFFICIENT_CONTEXT",
+      "refusal_reason": "abstention gate: retrieval confidence -1.073 below calibrated threshold -0.325",
+      "confidence": -1.0734
+    },
+    {
+      "qid": "ref-005",
+      "question": "Who won the 2024 Kaggle Alzheimer's MRI classification competition and what was their solution?",
+      "stratum": "clinical",
+      "note": "Out of scope despite matching several corpus keywords.",
+      "signals": {
+        "top_dense": 0.479815,
+        "top_rerank": 0.0,
+        "mean_top3": 0.159938,
+        "top_sparse": 13.056833
+      },
+      "top_docs": [
+        "epmc:pmc13286836",
+        "epmc:41936289",
+        "epmc:pmc12527191"
+      ],
+      "refused": true,
+      "answer_text": "INSUFFICIENT_CONTEXT",
+      "refusal_reason": "abstention gate: retrieval confidence -1.502 below calibrated threshold -0.325",
+      "confidence": -1.5019
+    },
+    {
+      "qid": "ref-006",
+      "question": "What is the exact p-value reported by Kim et al. (2019) for hippocampal subfield CA1 atrophy?",
+      "stratum": "clinical",
+      "note": "Fabricated citation; a good system must not invent a p-value.",
+      "signals": {
+        "top_dense": 0.487476,
+        "top_rerank": 0.0,
+        "mean_top3": 0.318219,
+        "top_sparse": 21.110921
+      },
+      "top_docs": [
+        "arxiv:1912.02145",
+        "epmc:pmc13477798",
+        "arxiv:1908.10084"
+      ],
+      "refused": true,
+      "answer_text": "INSUFFICIENT_CONTEXT",
+      "refusal_reason": "abstention gate: retrieval confidence -0.710 below calibrated threshold -0.325",
+      "confidence": -0.7102
+    },
+    {
+      "qid": "ref-007",
+      "question": "How many parameters does the NeuroRAG-2 embedding model have?",
+      "stratum": "rag",
+      "note": "Refers to a successor system that does not exist.",
+      "signals": {
+        "top_dense": 0.364534,
+        "top_rerank": 0.0,
+        "mean_top3": 0.218988,
+        "top_sparse": 8.000791
+      },
+      "top_docs": [
+        "epmc:10.20944/preprints202607.1502.v1",
+        "arxiv:2609.31660",
+        "arxiv:2502.00306"
+      ],
+      "refused": true,
+      "answer_text": "INSUFFICIENT_CONTEXT",
+      "refusal_reason": "abstention gate: retrieval confidence -1.207 below calibrated threshold -0.325",
+      "confidence": -1.2066
+    },
+    {
+      "qid": "ref-008",
+      "question": "What is the capital city of Mongolia?",
+      "stratum": "rag",
+      "note": "Control case: trivially out of domain, should always be refused.",
+      "signals": {
+        "top_dense": 0.092269,
+        "top_rerank": 0.0,
+        "mean_top3": 0.086438,
+        "top_sparse": 0.0
+      },
+      "top_docs": [
+        "epmc:pmc13603528",
+        "arxiv:2407.01505",
+        "epmc:pmc13523272"
+      ],
+      "refused": true,
+      "answer_text": "INSUFFICIENT_CONTEXT",
+      "refusal_reason": "abstention gate: retrieval confidence -1.870 below calibrated threshold -0.325",
+      "confidence": -1.8696
+    },
+    {
+      "qid": "ref-009",
+      "question": "Which hyperparameter values did the Swin UNETR authors use for BraTS whole-tumour class weighting?",
+      "stratum": "methods",
+      "note": "Near-miss: Swin UNETR is in the corpus but this implementation detail is not.",
+      "signals": {
+        "top_dense": 0.371585,
+        "top_rerank": 0.0,
+        "mean_top3": 0.330973,
+        "top_sparse": 28.757703
+      },
+      "top_docs": [
+        "arxiv:2201.01266",
+        "epmc:pmc13319089",
+        "arxiv:2307.15872"
+      ],
+      "refused": true,
+      "answer_text": "INSUFFICIENT_CONTEXT",
+      "refusal_reason": "abstention gate: retrieval confidence -0.646 below calibrated threshold -0.325",
+      "confidence": -0.6464
+    },
+    {
+      "qid": "ref-010",
+      "question": "What was the acceptance rate of the SIGIR 2009 reciprocal rank fusion paper?",
+      "stratum": "rag",
+      "note": "The paper IS in the corpus (as a metadata stub), but acceptance rates are not. Tests that the presence of a document does not license invention about it.",
+      "signals": {
+        "top_dense": 0.470513,
+        "top_rerank": 0.0,
+        "mean_top3": 0.352518,
+        "top_sparse": 30.883322
+      },
+      "top_docs": [
+        "doi:10.1145/1571941.1572114",
+        "arxiv:2604.13728",
+        "arxiv:2609.02913"
+      ],
+      "refused": true,
+      "answer_text": "INSUFFICIENT_CONTEXT",
+      "refusal_reason": "abstention gate: retrieval confidence -0.539 below calibrated threshold -0.325",
+      "confidence": -0.5386
+    },
+    {
+      "qid": "ref-011",
+      "question": "Which FDA approval date applies to the NeuroRAG software as a medical device?",
+      "stratum": "rag",
+      "note": "A regulatory claim about this repository itself; must be refused.",
+      "signals": {
+        "top_dense": 0.283716,
+        "top_rerank": 0.0,
+        "mean_top3": 0.094572,
+        "top_sparse": 8.196809
+      },
+      "top_docs": [
+        "arxiv:2211.02701",
+        "epmc:10.21203/rs.3.rs-8497459/v1",
+        "arxiv:2211.02701"
+      ],
+      "refused": true,
+      "answer_text": "INSUFFICIENT_CONTEXT",
+      "refusal_reason": "abstention gate: retrieval confidence -1.829 below calibrated threshold -0.325",
+      "confidence": -1.8289
+    },
+    {
+      "qid": "ref-012",
+      "question": "What sensitivity and specificity does the MIRIAD dataset report for the ConvNeXt-7T benchmark?",
+      "stratum": "clinical",
+      "note": "A real-sounding dataset and a plausible model name, neither present. An earlier draft used OASIS-3; the validator rejected it because OASIS-3 appears in four corpus documents.",
+      "signals": {
+        "top_dense": 0.469132,
+        "top_rerank": 0.0,
+        "mean_top3": 0.450379,
+        "top_sparse": 15.178816
+      },
+      "top_docs": [
+        "epmc:pmc12691013",
+        "epmc:pmc12691013",
+        "epmc:10.1101/2025.07.10.664260"
+      ],
+      "refused": false,
+      "answer_text": "Our BiP-MFT achieves subject-level classification accuracy of 0.90, specificity of 0.87, and sensitivity of 0.94. [5] It surpasses the best results of nine comparative methods, with 0.10, 0.08, and 0.09 improvements in classification accuracy, specificity and sensitivity respectively. [5] We further present AlzaSet, a novel, expertly labeled clinical dataset with axial, coronal, and sagittal perspectives from AD and cognitively normal control subjects. [3]",
+      "refusal_reason": null,
+      "confidence": -0.0491
+    }
+  ],
+  "index": {
+    "built_at": "2026-10-04T14:40:22Z",
+    "n_documents": 436,
+    "chunk_stats": {
+      "n_chunks": 1287,
+      "n_documents": 436,
+      "mean_chars": 575.7,
+      "median_chars": 616,
+      "min_chars": 95,
+      "max_chars": 956,
+      "n_sections": 20
+    },
+    "embedder": "all-MiniLM-L6-v2",
+    "embedder_is_semantic": true,
+    "reranker": null,
+    "reranker_is_neural": false,
+    "timings_ms": {
+      "chunking": 256.7,
+      "embedding": 70557.3,
+      "indexing": 44.5,
+      "bm25": 371.3
+    }
+  },
+  "abstention_calibration": {
+    "threshold": -0.32513,
+    "signals": [
+      "mean_top3"
+    ],
+    "weights": {
+      "mean_top3": 0.5
+    },
+    "stats": {
+      "mean_top3": {
+        "mean": 0.4601995777777778,
+        "std": 0.19991796173669604
+      }
+    },
+    "signal_selection": [
+      {
+        "signals": [
+          "mean_top3"
+        ],
+        "threshold": -0.32513,
+        "balanced_accuracy": 0.8977,
+        "true_refusal_rate": 0.9167,
+        "false_refusal_rate": 0.1212,
+        "auroc": 0.9293,
+        "cohens_d": 2.3773,
+        "weights": {
+          "mean_top3": 0.5
+        }
+      },
+      {
+        "signals": [
+          "top_dense",
+          "mean_top3"
+        ],
+        "threshold": -0.45243,
+        "balanced_accuracy": 0.8977,
+        "true_refusal_rate": 0.9167,
+        "false_refusal_rate": 0.1212,
+        "auroc": 0.9444,
+        "cohens_d": 2.3669,
+        "weights": {
+          "top_dense": 1.0,
+          "mean_top3": 0.5
+        }
+      },
+      {
+        "signals": [
+          "mean_top3",
+          "top_sparse"
+        ],
+        "threshold": -0.43807,
+        "balanced_accuracy": 0.8712,
+        "true_refusal_rate": 0.8333,
+        "false_refusal_rate": 0.0909,
+        "auroc": 0.9141,
+        "cohens_d": 1.9599,
+        "weights": {
+          "mean_top3": 0.5,
+          "top_sparse": 0.5
+        }
+      },
+      {
+        "signals": [
+          "top_dense",
+          "mean_top3",
+          "top_sparse"
+        ],
+        "threshold": -0.52857,
+        "balanced_accuracy": 0.8295,
+        "true_refusal_rate": 0.75,
+        "false_refusal_rate": 0.0909,
+        "auroc": 0.9394,
+        "cohens_d": 2.2047,
+        "weights": {
+          "top_dense": 1.0,
+          "mean_top3": 0.5,
+          "top_sparse": 0.5
+        }
+      },
+      {
+        "signals": [
+          "top_dense"
+        ],
+        "threshold": -0.97447,
+        "balanced_accuracy": 0.7765,
+        "true_refusal_rate": 0.5833,
+        "false_refusal_rate": 0.0303,
+        "auroc": 0.9141,
+        "cohens_d": 2.1501,
+        "weights": {
+          "top_dense": 1.0
+        }
+      },
+      {
+        "signals": [
+          "top_sparse"
+        ],
+        "threshold": -0.87421,
+        "balanced_accuracy": 0.7614,
+        "true_refusal_rate": 0.5833,
+        "false_refusal_rate": 0.0606,
+        "auroc": 0.7879,
+        "cohens_d": 1.1542,
+        "weights": {
+          "top_sparse": 0.5
+        }
+      },
+      {
+        "signals": [
+          "top_dense",
+          "top_sparse"
+        ],
+        "threshold": -0.96867,
+        "balanced_accuracy": 0.75,
+        "true_refusal_rate": 0.5,
+        "false_refusal_rate": 0.0,
+        "auroc": 0.9141,
+        "cohens_d": 1.9851,
+        "weights": {
+          "top_dense": 1.0,
+          "top_sparse": 0.5
+        }
+      }
+    ],
+    "calibrated_on": "33 answerable / 12 unanswerable golden questions",
+    "calibrated_for_embedder": "all-MiniLM-L6-v2",
+    "retriever_mode": "mode=weighted | embedder=all-MiniLM-L6-v2 (semantic) | bm25=on | reranker=off | top_k=6",
+    "max_false_refusal_budget": 0.15,
+    "metrics": {
+      "balanced_accuracy": 0.8977,
+      "true_refusal_rate": 0.9167,
+      "false_refusal_rate": 0.1212,
+      "auroc": 0.9293,
+      "cohens_d": 2.3773,
+      "mean_answerable": 0.4213945089340502,
+      "mean_unanswerable": -1.1588348995686388
+    },
+    "answerable_scores": [
+      {
+        "qid": "rag-001",
+        "score": 0.37789
+      },
+      {
+        "qid": "rag-002",
+        "score": 0.92457
+      },
+      {
+        "qid": "rag-003",
+        "score": 1.4296
+      },
+      {
+        "qid": "rag-004",
+        "score": 0.61385
+      },
+      {
+        "qid": "rag-005",
+        "score": 1.0364
+      },
+      {
+        "qid": "rag-006",
+        "score": -0.22631
+      },
+      {
+        "qid": "rag-007",
+        "score": 0.2418
+      },
+      {
+        "qid": "rag-008",
+        "score": -0.31879
+      },
+      {
+        "qid": "rag-009",
+        "score": -0.12442
+      },
+      {
+        "qid": "rag-010",
+        "score": -0.96749
+      },
+      {
+        "qid": "mth-001",
+        "score": 0.23009
+      },
+      {
+        "qid": "mth-002",
+        "score": -0.71049
+      },
+      {
+        "qid": "mth-003",
+        "score": 0.36502
+      },
+      {
+        "qid": "mth-004",
+        "score": 1.53502
+      },
+      {
+        "qid": "mth-005",
+        "score": -0.16722
+      },
+      {
+        "qid": "mth-006",
+        "score": 1.03473
+      },
+      {
+        "qid": "mth-007",
+        "score": 0.01481
+      },
+      {
+        "qid": "mth-008",
+        "score": 0.66801
+      },
+      {
+        "qid": "mth-009",
+        "score": 1.22344
+      },
+      {
+        "qid": "mth-010",
+        "score": 1.24627
+      },
+      {
+        "qid": "mth-011",
+        "score": 1.37411
+      },
+      {
+        "qid": "cli-001",
+        "score": -1.14678
+      },
+      {
+        "qid": "cli-002",
+        "score": 0.9989
+      },
+      {
+        "qid": "cli-003",
+        "score": 0.75459
+      },
+      {
+        "qid": "cli-004",
+        "score": 1.13784
+      },
+      {
+        "qid": "cli-005",
+        "score": 0.55376
+      },
+      {
+        "qid": "cli-006",
+        "score": 1.23474
+      },
+      {
+        "qid": "cli-007",
+        "score": 0.62013
+      },
+      {
+        "qid": "cli-008",
+        "score": 0.57765
+      },
+      {
+        "qid": "hop-001",
+        "score": -1.67105
+      },
+      {
+        "qid": "hop-002",
+        "score": 0.6768
+      },
+      {
+        "qid": "hop-003",
+        "score": -0.08811
+      },
+      {
+        "qid": "hop-004",
+        "score": 0.45667
+      }
+    ],
+    "unanswerable_scores": [
+      {
+        "qid": "ref-001",
+        "score": -1.56472
+      },
+      {
+        "qid": "ref-002",
+        "score": -1.47801
+      },
+      {
+        "qid": "ref-003",
+        "score": -1.43861
+      },
+      {
+        "qid": "ref-004",
+        "score": -1.07339
+      },
+      {
+        "qid": "ref-005",
+        "score": -1.50192
+      },
+      {
+        "qid": "ref-006",
+        "score": -0.71019
+      },
+      {
+        "qid": "ref-007",
+        "score": -1.20655
+      },
+      {
+        "qid": "ref-008",
+        "score": -1.86957
+      },
+      {
+        "qid": "ref-009",
+        "score": -0.6464
+      },
+      {
+        "qid": "ref-010",
+        "score": -0.53863
+      },
+      {
+        "qid": "ref-011",
+        "score": -1.82889
+      },
+      {
+        "qid": "ref-012",
+        "score": -0.04912
+      }
+    ],
+    "raw_signals": {
+      "answerable": [
+        {
+          "qid": "rag-001",
+          "top_dense": 0.580392,
+          "top_rerank": 0.0,
+          "mean_top3": 0.535747,
+          "top_sparse": 23.361464
+        },
+        {
+          "qid": "rag-002",
+          "top_dense": 0.706697,
+          "top_rerank": 0.0,
+          "mean_top3": 0.645038,
+          "top_sparse": 35.581673
+        },
+        {
+          "qid": "rag-003",
+          "top_dense": 0.811267,
+          "top_rerank": 0.0,
+          "mean_top3": 0.746002,
+          "top_sparse": 45.677553
+        },
+        {
+          "qid": "rag-004",
+          "top_dense": 0.640651,
+          "top_rerank": 0.0,
+          "mean_top3": 0.582919,
+          "top_sparse": 58.095655
+        },
+        {
+          "qid": "rag-005",
+          "top_dense": 0.775102,
+          "top_rerank": 0.0,
+          "mean_top3": 0.667394,
+          "top_sparse": 42.583336
+        },
+        {
+          "qid": "rag-006",
+          "top_dense": 0.421385,
+          "top_rerank": 0.0,
+          "mean_top3": 0.414956,
+          "top_sparse": 21.191611
+        },
+        {
+          "qid": "rag-007",
+          "top_dense": 0.553465,
+          "top_rerank": 0.0,
+          "mean_top3": 0.508539,
+          "top_sparse": 25.75376
+        },
+        {
+          "qid": "rag-008",
+          "top_dense": 0.560209,
+          "top_rerank": 0.0,
+          "mean_top3": 0.396467,
+          "top_sparse": 20.438801
+        },
+        {
+          "qid": "rag-009",
+          "top_dense": 0.440897,
+          "top_rerank": 0.0,
+          "mean_top3": 0.435325,
+          "top_sparse": 16.91994
+        },
+        {
+          "qid": "rag-010",
+          "top_dense": 0.442987,
+          "top_rerank": 0.0,
+          "mean_top3": 0.266781,
+          "top_sparse": 15.390176
+        },
+        {
+          "qid": "mth-001",
+          "top_dense": 0.537427,
+          "top_rerank": 0.0,
+          "mean_top3": 0.506199,
+          "top_sparse": 13.837653
+        },
+        {
+          "qid": "mth-002",
+          "top_dense": 0.344576,
+          "top_rerank": 0.0,
+          "mean_top3": 0.318159,
+          "top_sparse": 27.314695
+        },
+        {
+          "qid": "mth-003",
+          "top_dense": 0.618878,
+          "top_rerank": 0.0,
+          "mean_top3": 0.533173,
+          "top_sparse": 23.916907
+        },
+        {
+          "qid": "mth-004",
+          "top_dense": 0.825756,
+          "top_rerank": 0.0,
+          "mean_top3": 0.767078,
+          "top_sparse": 36.706716
+        },
+        {
+          "qid": "mth-005",
+          "top_dense": 0.467523,
+          "top_rerank": 0.0,
+          "mean_top3": 0.42677,
+          "top_sparse": 31.928169
+        },
+        {
+          "qid": "mth-006",
+          "top_dense": 0.696207,
+          "top_rerank": 0.0,
+          "mean_top3": 0.667061,
+          "top_sparse": 31.076376
+        },
+        {
+          "qid": "mth-007",
+          "top_dense": 0.540252,
+          "top_rerank": 0.0,
+          "mean_top3": 0.46316,
+          "top_sparse": 26.806256
+        },
+        {
+          "qid": "mth-008",
+          "top_dense": 0.662818,
+          "top_rerank": 0.0,
+          "mean_top3": 0.593746,
+          "top_sparse": 35.777966
+        },
+        {
+          "qid": "mth-009",
+          "top_dense": 0.747472,
+          "top_rerank": 0.0,
+          "mean_top3": 0.704788,
+          "top_sparse": 43.014175
+        },
+        {
+          "qid": "mth-010",
+          "top_dense": 0.746624,
+          "top_rerank": 0.0,
+          "mean_top3": 0.709351,
+          "top_sparse": 28.340014
+        },
+        {
+          "qid": "mth-011",
+          "top_dense": 0.768488,
+          "top_rerank": 0.0,
+          "mean_top3": 0.734908,
+          "top_sparse": 33.329865
+        },
+        {
+          "qid": "cli-001",
+          "top_dense": 0.692814,
+          "top_rerank": 0.0,
+          "mean_top3": 0.230938,
+          "top_sparse": 22.440705
+        },
+        {
+          "qid": "cli-002",
+          "top_dense": 0.695646,
+          "top_rerank": 0.0,
+          "mean_top3": 0.659898,
+          "top_sparse": 33.500305
+        },
+        {
+          "qid": "cli-003",
+          "top_dense": 0.614155,
+          "top_rerank": 0.0,
+          "mean_top3": 0.611056,
+          "top_sparse": 23.745873
+        },
+        {
+          "qid": "cli-004",
+          "top_dense": 0.700667,
+          "top_rerank": 0.0,
+          "mean_top3": 0.687674,
+          "top_sparse": 40.577913
+        },
+        {
+          "qid": "cli-005",
+          "top_dense": 0.647301,
+          "top_rerank": 0.0,
+          "mean_top3": 0.570907,
+          "top_sparse": 69.736272
+        },
+        {
+          "qid": "cli-006",
+          "top_dense": 0.715176,
+          "top_rerank": 0.0,
+          "mean_top3": 0.707046,
+          "top_sparse": 35.291681
+        },
+        {
+          "qid": "cli-007",
+          "top_dense": 0.651135,
+          "top_rerank": 0.0,
+          "mean_top3": 0.584174,
+          "top_sparse": 30.118052
+        },
+        {
+          "qid": "cli-008",
+          "top_dense": 0.675225,
+          "top_rerank": 0.0,
+          "mean_top3": 0.575683,
+          "top_sparse": 43.902479
+        },
+        {
+          "qid": "hop-001",
+          "top_dense": 0.378379,
+          "top_rerank": 0.0,
+          "mean_top3": 0.126126,
+          "top_sparse": 14.030111
+        },
+        {
+          "qid": "hop-002",
+          "top_dense": 0.613426,
+          "top_rerank": 0.0,
+          "mean_top3": 0.595505,
+          "top_sparse": 20.249183
+        },
+        {
+          "qid": "hop-003",
+          "top_dense": 0.465665,
+          "top_rerank": 0.0,
+          "mean_top3": 0.442584,
+          "top_sparse": 18.1529
+        },
+        {
+          "qid": "hop-004",
+          "top_dense": 0.576387,
+          "top_rerank": 0.0,
+          "mean_top3": 0.551497,
+          "top_sparse": 17.115513
+        }
+      ],
+      "unanswerable": [
+        {
+          "qid": "ref-001",
+          "top_dense": 0.442151,
+          "top_rerank": 0.0,
+          "mean_top3": 0.147384,
+          "top_sparse": 34.196913
+        },
+        {
+          "qid": "ref-002",
+          "top_dense": 0.273054,
+          "top_rerank": 0.0,
+          "mean_top3": 0.164718,
+          "top_sparse": 28.509907
+        },
+        {
+          "qid": "ref-003",
+          "top_dense": 0.193353,
+          "top_rerank": 0.0,
+          "mean_top3": 0.172596,
+          "top_sparse": 8.252609
+        },
+        {
+          "qid": "ref-004",
+          "top_dense": 0.254454,
+          "top_rerank": 0.0,
+          "mean_top3": 0.245609,
+          "top_sparse": 8.733948
+        },
+        {
+          "qid": "ref-005",
+          "top_dense": 0.479815,
+          "top_rerank": 0.0,
+          "mean_top3": 0.159938,
+          "top_sparse": 13.056833
+        },
+        {
+          "qid": "ref-006",
+          "top_dense": 0.487476,
+          "top_rerank": 0.0,
+          "mean_top3": 0.318219,
+          "top_sparse": 21.110921
+        },
+        {
+          "qid": "ref-007",
+          "top_dense": 0.364534,
+          "top_rerank": 0.0,
+          "mean_top3": 0.218988,
+          "top_sparse": 8.000791
+        },
+        {
+          "qid": "ref-008",
+          "top_dense": 0.092269,
+          "top_rerank": 0.0,
+          "mean_top3": 0.086438,
+          "top_sparse": 0.0
+        },
+        {
+          "qid": "ref-009",
+          "top_dense": 0.371585,
+          "top_rerank": 0.0,
+          "mean_top3": 0.330973,
+          "top_sparse": 28.757703
+        },
+        {
+          "qid": "ref-010",
+          "top_dense": 0.470513,
+          "top_rerank": 0.0,
+          "mean_top3": 0.352518,
+          "top_sparse": 30.883322
+        },
+        {
+          "qid": "ref-011",
+          "top_dense": 0.283716,
+          "top_rerank": 0.0,
+          "mean_top3": 0.094572,
+          "top_sparse": 8.196809
+        },
+        {
+          "qid": "ref-012",
+          "top_dense": 0.469131,
+          "top_rerank": 0.0,
+          "mean_top3": 0.450379,
+          "top_sparse": 15.178816
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,132 @@
+# ===========================================================================
+# Pinned corpus records.
+#
+# Relevance-ranked search over arXiv/Europe PMC does NOT reliably surface the
+# canonical primary source for a topic - a query for "Swin UNETR brain tumor
+# segmentation" frequently ranks citing papers above the original. For sources
+# that must be present, we pin the identifier and resolve it directly.
+#
+# Three entry kinds:
+#   arxiv.ids  - resolved via the arXiv id_list endpoint (guaranteed abstract)
+#   crossref   - resolved via Crossref (metadata; abstract only if deposited)
+#   records    - author-supplied text, written verbatim in this file
+# ===========================================================================
+
+arxiv:
+  # --- Retrieval-augmented generation: primary sources -------------------
+  - ids:
+      - "2005.11401"   # Lewis et al. - Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks
+      - "2004.04906"   # Karpukhin et al. - Dense Passage Retrieval for Open-Domain QA
+      - "2007.01282"   # Izacard & Grave - Leveraging Passage Retrieval with Generative Models (FiD)
+      - "2004.12832"   # Khattab & Zaharia - ColBERT (late-interaction retrieval)
+      - "2212.10496"   # Gao et al. - HyDE: Precise Zero-Shot Dense Retrieval without Relevance Labels
+      - "2309.15217"   # Es et al. - RAGAS: Automated Evaluation of Retrieval Augmented Generation
+      - "2303.08896"   # Manakul et al. - SelfCheckGPT: Zero-Resource Black-Box Hallucination Detection
+      - "2307.03172"   # Liu et al. - Lost in the Middle: How Language Models Use Long Contexts
+    tags: [rag, retrieval]
+    stratum: rag
+    topic: retrieval_augmented_generation
+
+  # --- Encoder / transformer foundations ---------------------------------
+  - ids:
+      - "1706.03762"   # Vaswani et al. - Attention Is All You Need
+      - "1810.04805"   # Devlin et al. - BERT
+      - "1908.10084"   # Reimers & Gurevych - Sentence-BERT (bi-encoder embeddings)
+      - "2010.11929"   # Dosovitskiy et al. - An Image is Worth 16x16 Words (ViT)
+      - "2103.14030"   # Liu et al. - Swin Transformer
+      - "1610.02391"   # Selvaraju et al. - Grad-CAM
+    tags: [methods, transformer]
+    stratum: methods
+    topic: vision_transformer_medical
+
+  # --- Medical imaging architectures used by the author's own work --------
+  - ids:
+      - "2111.14791"   # Hatamizadeh et al. - Swin-UNETR: brain tumor segmentation
+      - "2211.02701"   # Cardoso et al. - MONAI: an open-source framework for DL in healthcare
+      - "1606.06650"   # Cicek et al. - 3D U-Net
+      - "1809.10486"   # Isensee et al. - nnU-Net
+    tags: [methods, medical_imaging]
+    stratum: methods
+    topic: swin_unetr_segmentation
+
+crossref:
+  # Reciprocal Rank Fusion - the fusion rule used by NeuroRAG's hybrid
+  # retriever. SIGIR 2009; not on arXiv, so it is pinned by DOI.
+  - doi: "10.1145/1571941.1572114"
+    stratum: rag
+    topic: hybrid_sparse_dense
+    note: "Cormack, Clarke & Buettcher (SIGIR 2009). Primary source for Reciprocal Rank Fusion."
+
+  # The repository owner's own Q1 publication. Included so that NeuroRAG can
+  # answer questions about the author's prior work and cite it correctly.
+  # Elsevier does not deposit the abstract with Crossref, so a curated
+  # author-supplied record below supplies the text; the DOI record supplies
+  # verified bibliographic metadata.
+  - doi: "10.1016/j.imavis.2025.105491"
+    stratum: clinical
+    topic: own_publication
+    note: "Rahim, Ahmad, Ullah, Bedi & Jung (2025), Image and Vision Computing 157:105491."
+
+records:
+  # -----------------------------------------------------------------------
+  # AUTHOR-SUPPLIED RECORD
+  #
+  # Provenance matters here. This record's bibliographic metadata was verified
+  # against Crossref (DOI 10.1016/j.imavis.2025.105491), but the body text is a
+  # short description supplied by the author rather than the publisher's
+  # abstract, because no open copy is deposited with Europe PMC, Crossref or
+  # Semantic Scholar.
+  #
+  # It is deliberately conservative: it states only what the title and scope of
+  # the work establish, and contains no unverified performance numbers. When a
+  # citation resolves to this record the UI shows the `author_supplied_summary`
+  # tag so a reader is never misled into thinking it is verbatim source text.
+  #
+  # TO REPLACE WITH FULL TEXT: drop the accepted/published PDF into
+  # data/corpus/inbox/ and re-run `make corpus`. The PDF loader will ingest the
+  # real full text and `merge_duplicates` prefers the record with more text.
+  # -----------------------------------------------------------------------
+  - doc_id: "manual:rahim2025-mci-ad-multiview"
+    title: "Early progression detection from MCI to AD using multi-view MRI for enhanced assisted living"
+    authors: ["Nasir Rahim", "Naveed Ahmad", "Waseem Ullah", "Jatin Bedi", "Younhyun Jung"]
+    venue: "Image and Vision Computing"
+    year: 2025
+    doi: "10.1016/j.imavis.2025.105491"
+    url: "https://doi.org/10.1016/j.imavis.2025.105491"
+    stratum: clinical
+    topic: own_publication
+    source: author_supplied
+    tags: [own_publication, multi_view_mri, q1_journal]
+    note: >-
+      Author-supplied summary. Bibliographic metadata verified via Crossref;
+      body text supplied by the author because the publisher abstract is not
+      openly deposited. Replace with the publisher PDF via data/corpus/inbox/.
+    text: >-
+      ## Scope
+
+      This work addresses early detection of progression from mild cognitive
+      impairment (MCI) to Alzheimer's disease (AD) using structural magnetic
+      resonance imaging, motivated by assisted-living and elderly-care settings
+      where earlier identification of progression supports planning and
+      intervention.
+
+      ## Approach
+
+      The central idea is multi-view analysis of structural MRI. Rather than
+      relying on a single slice orientation, the method exploits the
+      complementary information available across the standard orthogonal
+      acquisition planes - axial, coronal and sagittal - which is the same
+      multi-view premise pursued in the author's subsequent AD-TriFuseViT
+      framework, where the three orientations are combined through a learned
+      fusion mechanism instead of being treated as independent samples.
+
+      ## Position in the literature
+
+      The paper sits in the MCI-to-AD conversion prediction literature, where
+      the key methodological concerns are subject-level rather than
+      slice-level evaluation, avoidance of data leakage from the same patient
+      appearing in both training and validation folds, and the use of
+      multi-modal or multi-view evidence to improve sensitivity to early
+      neurodegenerative change. It was published in Image and Vision Computing
+      (Q1, top decile of its field, impact factor 4.2) as volume 157, article
+      105491.

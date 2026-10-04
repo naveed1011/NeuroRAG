@@ -1,0 +1,90 @@
+# ===========================================================================
+# NeuroRAG configuration
+#
+# Every key maps to a field in neurorag/config.py. Anything omitted falls back
+# to that file's default. Override from the CLI without editing this file:
+#
+#     python scripts/ask.py "..." --set mode=dense --set top_k=10
+# ===========================================================================
+
+# ---- data -----------------------------------------------------------------
+corpus_path: data/corpus/corpus.jsonl
+index_dir: data/index
+golden_path: data/golden/golden.jsonl
+abstain_path: config/abstention.json
+
+# ---- chunking -------------------------------------------------------------
+# 900 chars ~ 225 tokens: large enough to keep a whole abstract section intact,
+# small enough that a retrieved chunk is mostly on-topic. The overlap stops a
+# claim from being cut in half at a boundary.
+chunk_size: 900
+chunk_overlap: 150
+min_chunk_chars: 120
+contextual_headers: true
+
+# ---- embeddings -----------------------------------------------------------
+# A small, fast bi-encoder that runs on CPU and inside a Kaggle notebook.
+# For better clinical vocabulary coverage, use a biomedical encoder instead:
+#     --set embed_model=NeuML/pubmedbert-base-embeddings
+# (needs ~3 GB RAM; see README "Choosing an embedding model".)
+embed_backend: auto            # auto | sentence_transformers | openai | lexical
+embed_model: all-MiniLM-L6-v2
+embed_batch_size: 8
+embed_max_seq_length: 256
+
+# ---- retrieval ------------------------------------------------------------
+# Chosen from measurement, not convention. On this corpus (436 terminology-dense
+# biomedical abstracts) `weighted` with a low dense weight matches BM25's
+# Recall@5 while beating it on MRR and nDCG@10; equal-rank RRF actively dilutes
+# the stronger lexical channel. See docs/EVALUATION.md "Fusion weight sweep".
+#   --set mode=hybrid      to use RRF instead
+#   --set dense_weight=0.5 to weight the channels evenly
+mode: weighted                 # weighted | hybrid (RRF) | dense | sparse
+top_k: 6                       # passages handed to the generator
+candidate_k: 30                # per-channel depth before fusion
+rrf_k: 60                      # RRF constant (60 is the published default)
+dense_weight: 0.2              # weighted-fusion weight for the dense channel
+                               # (0.0 = BM25 only, 1.0 = dense only). 0.2 is the
+                               # measured optimum for this corpus; re-sweep with
+                               # `python scripts/evaluate.py --sweep-weights`.
+bm25_k1: 1.5
+bm25_b: 0.75
+expand_acronyms: true          # "AD" also matches "alzheimer disease"
+max_chunks_per_doc: 2          # stop one paper occupying every slot
+
+# Off by default because it measurably HURTS here: ms-marco-MiniLM is trained on
+# web passages and is miscalibrated for biomedical abstracts, so it reorders a
+# strong lexical first stage for the worse (MRR 0.864 -> 0.810). The stage is
+# fully implemented and one flag away:
+#   --set rerank=true
+# With a domain-adapted cross-encoder the conclusion would likely reverse; that is
+# the obvious next experiment. See docs/EVALUATION.md "Does reranking help?".
+rerank: false
+rerank_model: cross-encoder/ms-marco-MiniLM-L-6-v2
+rerank_candidates: 30
+
+# ---- generation -----------------------------------------------------------
+# auto = first available of: OPENAI_API_KEY -> GEMINI_API_KEY -> local Ollama
+#        -> offline extractive fallback (no API key needed to run this repo).
+llm: auto
+llm_model: gpt-4o-mini
+gemini_model: gemini-1.5-flash
+ollama_model: llama3.1:8b
+temperature: 0.0
+max_tokens: 900
+timeout_s: 60
+max_context_chars: 2200
+refusal_token: INSUFFICIENT_CONTEXT
+persona: >-
+  You are NeuroRAG, a precise research assistant for Alzheimer's disease and
+  neuroimaging literature. You answer strictly from the supplied context and
+  cite every claim.
+
+# ---- abstention -----------------------------------------------------------
+# The threshold is *learned* from the golden set, not guessed. Run
+# `python scripts/evaluate.py --calibrate` to regenerate config/abstention.json.
+abstain: true
+abstain_threshold: null
+abstain_max_false_refusal: 0.15
+
+seed: 42
